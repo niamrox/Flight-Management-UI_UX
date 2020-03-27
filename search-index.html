@@ -1,0 +1,1529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="poceniletalskekarte.si flight booking">
+    <meta name="author" content="poceniletalskekarte.si">
+    <title>Flight Search View</title>
+    <!-- Favicon -->
+    <link href="./assets/img/brand/favicon.png" rel="icon" type="image/png">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <!-- Icons -->
+    <link href="./assets/vendor/nucleo/css/nucleo.css" rel="stylesheet">
+    <link href="./assets/vendor/font-awesome/css/fontawesome.min.css" rel="stylesheet">
+    <link href="./assets/vendor/font-awesome/css/brands.min.css" rel="stylesheet">
+    <link href="./assets/vendor/font-awesome/css/solid.min.css" rel="stylesheet">
+    <link href="./assets/vendor/daterangepicker/daterangepicker.css" rel="stylesheet" type="text/css"/>
+    <link href="./assets/vendor/owl-carousel/assets/owl.carousel.min.css" rel="stylesheet" type="text/css"/>
+    <!-- Argon CSS -->
+    <link type="text/css" href="./assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+<header class="header-global">
+    <nav id="navbar-main" class="navbar navbar-main navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand mr-lg-5" href="./index.html">
+                poceniletalskekarte.si
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_global"
+                    aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse" id="navbar_global">
+                <div class="navbar-collapse-header">
+                    <div class="row">
+                        <div class="col-6 collapse-brand">
+                            <a href="./index.html">
+                                <img alt="image" src="./assets/img/logo.png">
+                            </a>
+                        </div>
+                        <div class="col-6 collapse-close">
+                            <button type="button" class="navbar-toggler" data-toggle="collapse"
+                                    data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false"
+                                    aria-label="Toggle navigation">
+                                <span></span>
+                                <span></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link" role="button">
+                            <i class="ni ni-ui-04 d-lg-none"></i>
+                            <span class="nav-link-inner--text">Book Flight</span>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link" data-toggle="dropdown" role="button">
+                            <i class="ni ni-collection d-lg-none"></i>
+                            <span class="nav-link-inner--text">Airports</span>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav align-items-lg-center ml-lg-auto">
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-icon" href="#" target="_blank"
+                           data-toggle="tooltip" title="Like us on Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                            <span class="nav-link-inner--text d-lg-none">Facebook</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-icon" href="#"
+                           target="_blank" data-toggle="tooltip" title="Follow us on Instagram">
+                            <i class="fab fa-instagram"></i>
+                            <span class="nav-link-inner--text d-lg-none">Instagram</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-icon" href="#" target="_blank"
+                           data-toggle="tooltip" title="Follow us on Twitter">
+                            <i class="fab fa-twitter"></i>
+                            <span class="nav-link-inner--text d-lg-none">Twitter</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-icon"
+                           href="#" target="_blank"
+                           data-toggle="tooltip" title="Star us on Github">
+                            <i class="fab fa-github"></i>
+                            <span class="nav-link-inner--text d-lg-none">Github</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<main>
+    <section class="bg-toggle-btn d-block d-lg-none d-xl-none d-md-none">
+        <div class="bg-toggle-btn__wrap">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <p>
+                            <a class="btn btn-primary" data-toggle="collapse" href="#SearchFields" role="button" aria-expanded="false" aria-controls="SearchFields">
+                                <i class="fa fa-search"></i> Search Box
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section-top bg-yellow collapse show" id="SearchFields">
+        <div class="section-top__wrap">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 cs-padding">
+                        <h3 class="home-page-title">
+                            Find cheap flights from 1000s of airlines and travel agents
+                        </h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-1 cs-padding">
+                        <div class="dropdown show flight-type-dropdown">
+                            <a class="btn btn-secondary dropdown-toggle btn-flight-type" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Return
+                            </a>
+                            <div class="dropdown-menu btn-flight-type-menu" aria-labelledby="dropdownMenuLink">
+                                <a class="dropdown-item" data-bind="return" data-value="one-way multi-city" data-title="Return" href="#">Return </a>
+                                <a class="dropdown-item" data-bind="one-way" data-value="return multi-city" data-title="One Way" href="#">One Way</a>
+                                <a class="dropdown-item" data-bind="multi-city" data-value="one-way return" data-title="Multi City" href="#">Multi City</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 cs-padding">
+                        <div class="custom-control custom-checkbox mb-1">
+                            <input class="custom-control-input"
+                                   id="mcustomCheck1"
+                                   type="checkbox">
+                            <label class="custom-control-label"
+                                   for="mcustomCheck1">
+                                <span>Add nearby airport</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-1 cs-padding">
+                        <div class="custom-control custom-checkbox mb-1">
+                            <input class="custom-control-input"
+                                   id="mcustomCheck2"
+                                   type="checkbox">
+                            <label class="custom-control-label"
+                                   for="mcustomCheck2">
+                                <span>+/- 3 Days</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row search-select-field return" id="return">
+                    <div class="col-md-2 col-sm-12 cs-padding">
+                        <div class="form-group mb-3">
+                            <div class="input-group input-group-alternative">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fa fa-plane"></i></span>
+                                </div>
+                                <input class="form-control" placeholder="From" type="text">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-12 cs-padding">
+                        <div class="input-group input-group-alternative">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fa fa-plane"></i></span>
+                            </div>
+                            <input class="form-control" placeholder="To" type="text">
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-12 cs-padding">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
+                                </div>
+                                <input name="dates" class="form-control" placeholder="Start Date" type="text"
+                                       value="06/18/2019">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-12 cs-padding">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
+                                </div>
+                                <input name="dates" class="form-control" placeholder="Return Date" type="text"
+                                       value="06/18/2019">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-12 float-right text-right cs-padding cs-traveler-selection">
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle input-group-alternative text-left"
+                                    type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">
+                                <i class="fa fa-user-alt"></i> 1 adult, Economy
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                                <div class="dropdown-menu__wrap">
+                                    <h4> Travellers </h4>
+                                    <ul class="list-unstyled travgellers-list space-between">
+                                        <li>
+                                            <span class="travellers-type">Adults</span>
+                                            <div class="text-right d-inline numbers-button-group">
+                                                <div class="input-group">
+                                                    <span class="input-group-btn">
+                                                          <button type="button" class="btn btn-default btn-number"
+                                                                  disabled="disabled" data-type="minus"
+                                                                  data-field="quant[1]">
+                                                              <span class="fa fa-minus"></span>
+                                                          </button>
+                                                    </span>
+                                                    <input type="text" name="quant[1]" class="form-control input-number"
+                                                           value="1" min="1" max="10">
+                                                    <span class="input-group-btn">
+                                                          <button type="button" class="btn btn-default btn-number"
+                                                                  data-type="plus" data-field="quant[1]">
+                                                              <span class="fa fa-plus"></span>
+                                                          </button>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <span class="travellers-type">Children</span>
+                                            <div class="text-right d-inline numbers-button-group">
+                                                <div class="input-group">
+                                                    <span class="input-group-btn">
+                                                          <button type="button" class="btn btn-default btn-number"
+                                                                  disabled="disabled" data-type="minus"
+                                                                  data-field="quant[1]">
+                                                              <span class="fa fa-minus"></span>
+                                                          </button>
+                                                    </span>
+                                                    <input type="text" name="quant[1]" class="form-control input-number"
+                                                           value="1" min="1" max="10">
+                                                    <span class="input-group-btn">
+                                                          <button type="button" class="btn btn-default btn-number"
+                                                                  data-type="plus" data-field="quant[1]">
+                                                              <span class="fa fa-plus"></span>
+                                                          </button>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <span class="travellers-type">Baby</span>
+                                            <div class="text-right d-inline numbers-button-group">
+                                                <div class="input-group">
+                                                    <span class="input-group-btn">
+                                                          <button type="button" class="btn btn-default btn-number"
+                                                                  disabled="disabled" data-type="minus"
+                                                                  data-field="quant[1]">
+                                                              <span class="fa fa-minus"></span>
+                                                          </button>
+                                                    </span>
+                                                    <input type="text" name="quant[1]" class="form-control input-number"
+                                                           value="1" min="1" max="10">
+                                                    <span class="input-group-btn">
+                                                          <button type="button" class="btn btn-default btn-number"
+                                                                  data-type="plus" data-field="quant[1]">
+                                                              <span class="fa fa-plus"></span>
+                                                          </button>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-sm-12 cs-padding">
+                        <a class="btn btn-primary" href="#"><i class="fa fa-search"></i></a>
+                    </div>
+                </div>
+                <div class="row search-select-field one-way hide" id="one-way">
+                    <div class="col-md-3 col-sm-12 cs-padding">
+                        <div class="form-group mb-3">
+                            <div class="input-group input-group-alternative">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fa fa-plane"></i></span>
+                                </div>
+                                <input class="form-control" placeholder="From" type="text">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-12 cs-padding">
+                        <div class="input-group input-group-alternative">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fa fa-plane"></i></span>
+                            </div>
+                            <input class="form-control" placeholder="To" type="text">
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-12 cs-padding">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
+                                </div>
+                                <input name="dates" class="form-control" placeholder="Start Date" type="text"
+                                       value="06/18/2019">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-12 float-right text-right cs-padding cs-traveler-selection">
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle input-group-alternative text-left"
+                                    type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">
+                                <i class="fa fa-user-alt"></i> 1 adult, Economy
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <div class="dropdown-menu__wrap">
+                                    <h4> Travellers </h4>
+                                    <ul class="list-unstyled travgellers-list space-between">
+                                        <li>
+                                            <span class="travellers-type">Adults</span>
+                                            <div class="text-right d-inline numbers-button-group">
+                                                <div class="input-group">
+                                                    <span class="input-group-btn">
+                                                          <button type="button" class="btn btn-default btn-number"
+                                                                  disabled="disabled" data-type="minus"
+                                                                  data-field="quant[1]">
+                                                              <span class="fa fa-minus"></span>
+                                                          </button>
+                                                    </span>
+                                                    <input type="text" name="quant[1]" class="form-control input-number"
+                                                           value="1" min="1" max="10">
+                                                    <span class="input-group-btn">
+                                                          <button type="button" class="btn btn-default btn-number"
+                                                                  data-type="plus" data-field="quant[1]">
+                                                              <span class="fa fa-plus"></span>
+                                                          </button>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <span class="travellers-type">Children</span>
+                                            <div class="text-right d-inline numbers-button-group">
+                                                <div class="input-group">
+                                                    <span class="input-group-btn">
+                                                          <button type="button" class="btn btn-default btn-number"
+                                                                  disabled="disabled" data-type="minus"
+                                                                  data-field="quant[1]">
+                                                              <span class="fa fa-minus"></span>
+                                                          </button>
+                                                    </span>
+                                                    <input type="text" name="quant[1]" class="form-control input-number"
+                                                           value="1" min="1" max="10">
+                                                    <span class="input-group-btn">
+                                                          <button type="button" class="btn btn-default btn-number"
+                                                                  data-type="plus" data-field="quant[1]">
+                                                              <span class="fa fa-plus"></span>
+                                                          </button>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <span class="travellers-type">Baby</span>
+                                            <div class="text-right d-inline numbers-button-group">
+                                                <div class="input-group">
+                                                    <span class="input-group-btn">
+                                                          <button type="button" class="btn btn-default btn-number"
+                                                                  disabled="disabled" data-type="minus"
+                                                                  data-field="quant[1]">
+                                                              <span class="fa fa-minus"></span>
+                                                          </button>
+                                                    </span>
+                                                    <input type="text" name="quant[1]" class="form-control input-number"
+                                                           value="1" min="1" max="10">
+                                                    <span class="input-group-btn">
+                                                          <button type="button" class="btn btn-default btn-number"
+                                                                  data-type="plus" data-field="quant[1]">
+                                                              <span class="fa fa-plus"></span>
+                                                          </button>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-sm-12 cs-padding">
+                        <a class="btn btn-primary" href="#"><i class="fa fa-search"></i></a>
+                    </div>
+                </div>
+                <div class="row search-select-field multi-city hide" id="multi-city">
+                    <div class="col-md-12 first-row">
+                        <div class="row">
+                            <div class="col-md-3 col-sm-12 cs-padding">
+                                <div class="form-group mb-3">
+                                    <div class="input-group input-group-alternative">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="fa fa-plane"></i></span>
+                                        </div>
+                                        <input class="form-control" placeholder="From" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-12 cs-padding">
+                                <div class="input-group input-group-alternative">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fa fa-plane"></i></span>
+                                    </div>
+                                    <input class="form-control" placeholder="To" type="text">
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-sm-12 cs-padding">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
+                                        </div>
+                                        <input name="dates" class="form-control" placeholder="Start Date" type="text"
+                                               value="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-12 cs-padding">
+                                <div class="form-group mb-3">
+                                    <div class="input-group input-group-alternative">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="fa fa-business-time"></i></span>
+                                        </div>
+                                        <input class="form-control" placeholder="Economy" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="additional-row" class="col-md-12 additional-row">
+                        <div class="row">
+                            <div class="col-md-3 col-sm-12 cs-padding">
+                                <div class="form-group mb-3">
+                                    <div class="input-group input-group-alternative">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="fa fa-plane"></i></span>
+                                        </div>
+                                        <input class="form-control" placeholder="From" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-12 cs-padding">
+                                <div class="input-group input-group-alternative">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fa fa-plane"></i></span>
+                                    </div>
+                                    <input class="form-control" placeholder="To" type="text">
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-sm-12 cs-padding">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
+                                        </div>
+                                        <input name="dates" class="form-control" placeholder="Start Date" type="text"
+                                               value="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-12 cs-padding">
+                                <div class="form-group mb-3">
+                                    <div class="input-group input-group-alternative">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="fa fa-business-time"></i></span>
+                                        </div>
+                                        <input class="form-control" placeholder="Economy" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-1 col-sm-12 cs-padding">
+                                <a class="btn btn-primary" href="#" onclick="ClearSingleRow()"><i class="fa fa-times"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 bottom-row">
+                        <div class="row">
+                            <div class="col-md-3 col-sm-12 cs-padding">
+                                <div class="form-group transparent-btn mb-3">
+                                    <div class="input-group">
+                                        <a class="btn btn-transparent" href="#" onclick="AdRow()">+ Add another flight</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-12 cs-padding">
+                                <div class="form-group transparent-btn mb-3">
+                                    <div class="input-group">
+                                        <a class="btn btn-transparent" href="#" onclick="ClearAllRow()"> Clear All</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-sm-12 cs-padding">
+                            </div>
+                            <div class="col-md-3 col-sm-12 float-right text-right cs-padding cs-traveler-selection">
+                                <div class="dropdown">
+                                    <button class="btn btn-secondary dropdown-toggle input-group-alternative text-left"
+                                            type="button" id="dropdownMenuButton3" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
+                                        <i class="fa fa-user-alt"></i> 1 adult, Economy
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
+                                        <div class="dropdown-menu__wrap">
+                                            <h4> Travellers </h4>
+                                            <ul class="list-unstyled travgellers-list space-between">
+                                                <li>
+                                                    <span class="travellers-type">Adults</span>
+                                                    <div class="text-right d-inline numbers-button-group">
+                                                        <div class="input-group">
+                                                    <span class="input-group-btn">
+                                                          <button type="button" class="btn btn-default btn-number"
+                                                                  disabled="disabled" data-type="minus"
+                                                                  data-field="quant[1]">
+                                                              <span class="fa fa-minus"></span>
+                                                          </button>
+                                                    </span>
+                                                            <input type="text" name="quant[1]" class="form-control input-number"
+                                                                   value="1" min="1" max="10">
+                                                            <span class="input-group-btn">
+                                                          <button type="button" class="btn btn-default btn-number"
+                                                                  data-type="plus" data-field="quant[1]">
+                                                              <span class="fa fa-plus"></span>
+                                                          </button>
+                                                    </span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <span class="travellers-type">Children</span>
+                                                    <div class="text-right d-inline numbers-button-group">
+                                                        <div class="input-group">
+                                                    <span class="input-group-btn">
+                                                          <button type="button" class="btn btn-default btn-number"
+                                                                  disabled="disabled" data-type="minus"
+                                                                  data-field="quant[1]">
+                                                              <span class="fa fa-minus"></span>
+                                                          </button>
+                                                    </span>
+                                                            <input type="text" name="quant[1]" class="form-control input-number"
+                                                                   value="1" min="1" max="10">
+                                                            <span class="input-group-btn">
+                                                          <button type="button" class="btn btn-default btn-number"
+                                                                  data-type="plus" data-field="quant[1]">
+                                                              <span class="fa fa-plus"></span>
+                                                          </button>
+                                                    </span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <span class="travellers-type">Baby</span>
+                                                    <div class="text-right d-inline numbers-button-group">
+                                                        <div class="input-group">
+                                                    <span class="input-group-btn">
+                                                          <button type="button" class="btn btn-default btn-number"
+                                                                  disabled="disabled" data-type="minus"
+                                                                  data-field="quant[1]">
+                                                              <span class="fa fa-minus"></span>
+                                                          </button>
+                                                    </span>
+                                                            <input type="text" name="quant[1]" class="form-control input-number"
+                                                                   value="1" min="1" max="10">
+                                                            <span class="input-group-btn">
+                                                          <button type="button" class="btn btn-default btn-number"
+                                                                  data-type="plus" data-field="quant[1]">
+                                                              <span class="fa fa-plus"></span>
+                                                          </button>
+                                                    </span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-1 col-sm-12 cs-padding">
+                                <a class="btn btn-primary" href="#"><i class="fa fa-search"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="cheapest-flight">
+        <div class="cheapest-flight__wrap">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3 class="text-primary font-weight-light mb-2">Currently Cheapest Flight</h3>
+                    </div>
+                </div>
+                <div class="owl-carousel owl-theme">
+                    <div class="item">
+                        <div class="flight-card">
+                            <div class="flight-card__content">
+                                <div class="flight-card__content__wrap">
+                                    <div class="city-thumb">
+                                        <img src="images/1.jpg" class="img-responsive"/>
+                                        <div class="flight-info clearfix">
+                                            <div class="flight-span float-left">
+                                                <h5>Flights from</h5>
+                                            </div>
+                                            <div class="price float-right">
+                                                <h4 class="price">
+                                                    $225
+                                                </h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-meta">
+                                        <div class="title">
+                                            <h3><a href="">New York</a></h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="flight-card">
+                            <div class="flight-card__content">
+                                <div class="flight-card__content__wrap">
+                                    <div class="city-thumb">
+                                        <img src="images/1.jpg" class="img-responsive"/>
+                                        <div class="flight-info">
+                                            <div class="flight-span float-left">
+                                                <h5>Flights from</h5>
+                                            </div>
+                                            <div class="price float-right">
+                                                <h4 class="price">
+                                                    $225
+                                                </h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-meta">
+                                        <div class="title">
+                                            <h3><a href="">New York</a></h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="flight-card">
+                            <div class="flight-card__content">
+                                <div class="flight-card__content__wrap">
+                                    <div class="city-thumb">
+                                        <img src="images/1.jpg" class="img-responsive"/>
+                                        <div class="flight-info">
+                                            <div class="flight-span float-left">
+                                                <h5>Flights from</h5>
+                                            </div>
+                                            <div class="price float-right">
+                                                <h4 class="price">
+                                                    $225
+                                                </h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-meta">
+                                        <div class="title">
+                                            <h3><a href="">New York</a></h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="flight-card">
+                            <div class="flight-card__content">
+                                <div class="flight-card__content__wrap">
+                                    <div class="city-thumb">
+                                        <img src="images/1.jpg" class="img-responsive"/>
+                                        <div class="flight-info">
+                                            <div class="flight-span float-left">
+                                                <h5>Flights from</h5>
+                                            </div>
+                                            <div class="price float-right">
+                                                <h4 class="price">
+                                                    $225
+                                                </h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-meta">
+                                        <div class="title">
+                                            <h3><a href="">New York</a></h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="flight-card">
+                            <div class="flight-card__content">
+                                <div class="flight-card__content__wrap">
+                                    <div class="city-thumb">
+                                        <img src="images/1.jpg" class="img-responsive"/>
+                                        <div class="flight-info">
+                                            <div class="flight-span float-left">
+                                                <h5>Flights from</h5>
+                                            </div>
+                                            <div class="price float-right">
+                                                <h4 class="price">
+                                                    $225
+                                                </h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-meta">
+                                        <div class="title">
+                                            <h3><a href="">New York</a></h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="flight-card">
+                            <div class="flight-card__content">
+                                <div class="flight-card__content__wrap">
+                                    <div class="city-thumb">
+                                        <img src="images/1.jpg" class="img-responsive"/>
+                                        <div class="flight-info">
+                                            <div class="flight-span float-left">
+                                                <h5>Flights from</h5>
+                                            </div>
+                                            <div class="price float-right">
+                                                <h4 class="price">
+                                                    $225
+                                                </h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-meta">
+                                        <div class="title">
+                                            <h3><a href="">New York</a></h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="flight-card">
+                            <div class="flight-card__content">
+                                <div class="flight-card__content__wrap">
+                                    <div class="city-thumb">
+                                        <img src="images/1.jpg" class="img-responsive"/>
+                                        <div class="flight-info">
+                                            <div class="flight-span float-left">
+                                                <h5>Flights from</h5>
+                                            </div>
+                                            <div class="price float-right">
+                                                <h4 class="price">
+                                                    $225
+                                                </h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-meta">
+                                        <div class="title">
+                                            <h3><a href="">New York</a></h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="flight-card">
+                            <div class="flight-card__content">
+                                <div class="flight-card__content__wrap">
+                                    <div class="city-thumb">
+                                        <img src="images/1.jpg" class="img-responsive"/>
+                                        <div class="flight-info">
+                                            <div class="flight-span float-left">
+                                                <h5>Flights from</h5>
+                                            </div>
+                                            <div class="price float-right">
+                                                <h4 class="price">
+                                                    $225
+                                                </h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-meta">
+                                        <div class="title">
+                                            <h3><a href="">New York</a></h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="flight-card">
+                            <div class="flight-card__content">
+                                <div class="flight-card__content__wrap">
+                                    <div class="city-thumb">
+                                        <img src="images/1.jpg" class="img-responsive"/>
+                                        <div class="flight-info">
+                                            <div class="flight-span float-left">
+                                                <h5>Flights from</h5>
+                                            </div>
+                                            <div class="price float-right">
+                                                <h4 class="price">
+                                                    $225
+                                                </h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-meta">
+                                        <div class="title">
+                                            <h3><a href="">New York</a></h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="flight-card">
+                            <div class="flight-card__content">
+                                <div class="flight-card__content__wrap">
+                                    <div class="city-thumb">
+                                        <img src="images/1.jpg" class="img-responsive"/>
+                                        <div class="flight-info">
+                                            <div class="flight-span float-left">
+                                                <h5>Flights from</h5>
+                                            </div>
+                                            <div class="price float-right">
+                                                <h4 class="price">
+                                                    $225
+                                                </h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-meta">
+                                        <div class="title">
+                                            <h3><a href="">New York</a></h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="flight-card">
+                            <div class="flight-card__content">
+                                <div class="flight-card__content__wrap">
+                                    <div class="city-thumb">
+                                        <img src="images/1.jpg" class="img-responsive"/>
+                                        <div class="flight-info">
+                                            <div class="flight-span float-left">
+                                                <h5>Flights from</h5>
+                                            </div>
+                                            <div class="price float-right">
+                                                <h4 class="price">
+                                                    $225
+                                                </h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-meta">
+                                        <div class="title">
+                                            <h3><a href="">New York</a></h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="flight-card">
+                            <div class="flight-card__content">
+                                <div class="flight-card__content__wrap">
+                                    <div class="city-thumb">
+                                        <img src="images/1.jpg" class="img-responsive"/>
+                                        <div class="flight-info">
+                                            <div class="flight-span float-left">
+                                                <h5>Flights from</h5>
+                                            </div>
+                                            <div class="price float-right">
+                                                <h4 class="price">
+                                                    $225
+                                                </h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-meta">
+                                        <div class="title">
+                                            <h3><a href="">New York</a></h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section class="trending-cities bg-secondary">
+        <div class="trending-cities__wrap">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3 class="text-primary font-weight-light mb-2">Trending Cities</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="trending-cities-card">
+                            <div class="list-trending-cities__wrap">
+                                <div class="media">
+                                    <img class="mr-3" src="images/4.jpg" alt=""/>
+                                    <div class="media-body">
+                                        <h5>Flights To</h5>
+                                        <h3><a href="#">New York</a></h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="trending-cities-card">
+                            <div class="list-trending-cities__wrap">
+                                <div class="media">
+                                    <img class="mr-3" src="images/4.jpg" alt=""/>
+                                    <div class="media-body">
+                                        <h5>Flights To</h5>
+                                        <h3><a href="#">New York</a></h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="trending-cities-card">
+                            <div class="list-trending-cities__wrap">
+                                <div class="media">
+                                    <img class="mr-3" src="images/4.jpg" alt=""/>
+                                    <div class="media-body">
+                                        <h5>Flights To</h5>
+                                        <h3><a href="#">New York</a></h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="trending-cities-card">
+                            <div class="list-trending-cities__wrap">
+                                <div class="media">
+                                    <img class="mr-3" src="images/4.jpg" alt=""/>
+                                    <div class="media-body">
+                                        <h5>Flights To</h5>
+                                        <h3><a href="#">New York</a></h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="trending-cities-card">
+                            <div class="list-trending-cities__wrap">
+                                <div class="media">
+                                    <img class="mr-3" src="images/4.jpg" alt=""/>
+                                    <div class="media-body">
+                                        <h5>Flights To</h5>
+                                        <h3><a href="#">New York</a></h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="trending-cities-card">
+                            <div class="list-trending-cities__wrap">
+                                <div class="media">
+                                    <img class="mr-3" src="images/4.jpg" alt=""/>
+                                    <div class="media-body">
+                                        <h5>Flights To</h5>
+                                        <h3><a href="#">New York</a></h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="trending-cities-card">
+                            <div class="list-trending-cities__wrap">
+                                <div class="media">
+                                    <img class="mr-3" src="images/4.jpg" alt=""/>
+                                    <div class="media-body">
+                                        <h5>Flights To</h5>
+                                        <h3><a href="#">New York</a></h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="trending-cities-card">
+                            <div class="list-trending-cities__wrap">
+                                <div class="media">
+                                    <img class="mr-3" src="images/4.jpg" alt=""/>
+                                    <div class="media-body">
+                                        <h5>Flights To</h5>
+                                        <h3><a href="#">New York</a></h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="trending-cities-card">
+                            <div class="list-trending-cities__wrap">
+                                <div class="media">
+                                    <img class="mr-3" src="images/4.jpg" alt=""/>
+                                    <div class="media-body">
+                                        <h5>Flights To</h5>
+                                        <h3><a href="#">New York</a></h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="trending-cities-card">
+                            <div class="list-trending-cities__wrap">
+                                <div class="media">
+                                    <img class="mr-3" src="images/4.jpg" alt=""/>
+                                    <div class="media-body">
+                                        <h5>Flights To</h5>
+                                        <h3><a href="#">New York</a></h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="trending-cities-card">
+                            <div class="list-trending-cities__wrap">
+                                <div class="media">
+                                    <img class="mr-3" src="images/4.jpg" alt=""/>
+                                    <div class="media-body">
+                                        <h5>Flights To</h5>
+                                        <h3><a href="#">New York</a></h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="trending-cities-card">
+                            <div class="list-trending-cities__wrap">
+                                <div class="media">
+                                    <img class="mr-3" src="images/4.jpg" alt=""/>
+                                    <div class="media-body">
+                                        <h5>Flights To</h5>
+                                        <h3><a href="#">New York</a></h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="trending-cities-card">
+                            <div class="list-trending-cities__wrap">
+                                <div class="media">
+                                    <img class="mr-3" src="images/4.jpg" alt=""/>
+                                    <div class="media-body">
+                                        <h5>Flights To</h5>
+                                        <h3><a href="#">New York</a></h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="trending-cities-card">
+                            <div class="list-trending-cities__wrap">
+                                <div class="media">
+                                    <img class="mr-3" src="images/4.jpg" alt=""/>
+                                    <div class="media-body">
+                                        <h5>Flights To</h5>
+                                        <h3><a href="#">New York</a></h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="trending-cities-card">
+                            <div class="list-trending-cities__wrap">
+                                <div class="media">
+                                    <img class="mr-3" src="images/4.jpg" alt=""/>
+                                    <div class="media-body">
+                                        <h5>Flights To</h5>
+                                        <h3><a href="#">New York</a></h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="trending-cities-card">
+                            <div class="list-trending-cities__wrap">
+                                <div class="media">
+                                    <img class="mr-3" src="images/4.jpg" alt=""/>
+                                    <div class="media-body">
+                                        <h5>Flights To</h5>
+                                        <h3><a href="#">New York</a></h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="about-flight-company">
+        <div class="about-flight-company__wrap">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-header-section">
+                        <h3 class="text-primary font-weight-light mb-2">Currently Cheapest Flight</h3>
+                        <h5 class="sub-header">
+                            Search and compare cheap flights from 1000s of airlines, travel agents and travel sites.
+                        </h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <h3>Who are we ?</h3>
+                        <div class="text-group">
+                            <p>
+                                Cheapflights is your go-to site for flight deals, last minute flights, travel tips and blogs that will inspire you.
+                            </p>
+                            <p>
+                                We're a team of passionate, savvy travellers on a mission to make it easy for you to find and compare the best flight deals.
+                            </p>
+                            <p>
+                                As one of the world's largest flight comparison sites, Cheapflights is the starting point for your travel planning.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <h3>How do we do it?</h3>
+                        <div class="text-group">
+                            <p>
+                                Our innovative flight search, curated deals and inspirational content make it simple to find cheap flights.
+                            </p>
+                            <p>
+                                We partner with hundreds of providers - big and small - to bring you cheap flights and personalised travel options.
+                            </p>
+                            <p>
+                                Our expertise and powerful search technology open up new travel possibilities and help you see the world on a budget.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <h3>Why come to us?</h3>
+                        <div class="text-group">
+                            <p>
+                                Millions of travellers rely on us for trusted advice and the best selection of cheap flights and travel deals.
+                            </p>
+                            <p>
+                                Our local experts have been serving up useful tips, destination information and travel inspiration since 1996.
+                            </p>
+                            <p>
+                                We combine experience with local knowledge and our global network of partners to create amazing holiday moments.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="company-about-major-feature bg-secondary">
+        <div class="company-about-major-feature__wrap">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 text-center">
+                        <div class="company-about-major-card">
+                            <div class="company-about-major-card__wrap">
+                                <img class="img-responsive" src="images/c1.png"/>
+                                <h3>Go anywhere</h3>
+                                <p>Its your world , We will help you to explore it. Find the best prices across millions of flights, Hotels and car to hire options to create your perfect trip</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <div class="company-about-major-card">
+                            <div class="company-about-major-card__wrap">
+                                <img class="img-responsive" src="images/c2.png"/>
+                                <h3>Make it simple</h3>
+                                <p>Its your world , We will help you to explore it. Find the best prices across millions of flights, Hotels and car to hire options to create your perfect trip</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <div class="company-about-major-card">
+                            <div class="company-about-major-card__wrap">
+                                <img class="img-responsive" src="images/c3.png"/>
+                                <h3>Travel your way</h3>
+                                <p>Its your world , We will help you to explore it. Find the best prices across millions of flights, Hotels and car to hire options to create your perfect trip</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<footer class="footer has-cards">
+    <div class="container">
+        <div class="row row-grid align-items-center my-md">
+            <div class="col-lg-6">
+                <h3 class="text-primary font-weight-light mb-2">Thank you for taking my service !</h3>
+                <h4 class="mb-0 font-weight-light">I will be your next tech expert to help you on all IT projects</h4>
+            </div>
+            <div class="col-lg-6 text-lg-center btn-wrapper">
+                <a target="_blank" href="#" class="btn btn-neutral btn-icon-only btn-twitter btn-round btn-lg"
+                   data-toggle="tooltip" data-original-title="Follow us">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a target="_blank" href="#" class="btn btn-neutral btn-icon-only btn-facebook btn-round btn-lg"
+                   data-toggle="tooltip" data-original-title="Like us">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a target="_blank" href="#" class="btn btn-neutral btn-icon-only btn-dribbble btn-lg btn-round"
+                   data-toggle="tooltip" data-original-title="Follow us">
+                    <i class="fab fa-dribbble"></i>
+                </a>
+                <a target="_blank" href="#" class="btn btn-neutral btn-icon-only btn-github btn-round btn-lg"
+                   data-toggle="tooltip" data-original-title="Star on Github">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+        </div>
+        <hr>
+        <div class="row align-items-center justify-content-md-between">
+            <div class="col-md-6 col-sm-6 col-6">
+                <div class="copyright">
+                    &copy; 2019 <a href="https://www.freelancer.com/u/ThemeRox" target="_blank">NiamRox</a>.
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6 col-6">
+                <ul class="nav nav-footer justify-content-end">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" target="_blank">NiamRox</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" target="_blank">About Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Core -->
+<script src="./assets/vendor/jquery/jquery.min.js"></script>
+<script src="./assets/vendor/popper/popper.min.js"></script>
+<script src="./assets/vendor/bootstrap/bootstrap.min.js"></script>
+<script src="./assets/vendor/headroom/headroom.min.js"></script>
+<!-- Optional JS -->
+<script src="./assets/vendor/onscreen/onscreen.min.js"></script>
+<script src="./assets/vendor/nouislider/js/nouislider.min.js"></script>
+<script src="./assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+
+<script type="text/javascript" src="./assets/vendor/moment/moment.min.js"></script>
+<script type="text/javascript" src="./assets/vendor/daterangepicker/daterangepicker.min.js"></script>
+<script type="text/javascript" src="./assets/vendor/missofis-countdown/missofis-countdown.js"></script>
+<script type="text/javascript" src="./assets/vendor/owl-carousel/owl.carousel.min.js"></script>
+
+<script src="./assets/js/scripts.js"></script>
+<script>
+    var dateToday = new Date();
+    $('input[name="dates"]').daterangepicker({
+        singleDatePicker: true,
+        showDropdowns: true,
+        minDate: dateToday,
+    });
+
+    $(document).ready(function () {
+        var tootleStatus = document.getElementById("alert-tootle");
+        $(".custom-toggle-slider").on('click', function () {
+            if (tootleStatus.checked) {
+
+            } else {
+                $('#modal-notification').modal('show');
+                $('#modal-notification').on('hidden.bs.modal', function (e) {
+                    $("#alert-tootle").prop("checked", false);
+                })
+
+            }
+        });
+    });
+
+
+    $('.btn-number').click(function (e) {
+        e.stopPropagation();
+        e.stopImmediatePropagation();
+        e.preventDefault();
+
+        fieldName = $(this).attr('data-field');
+        type = $(this).attr('data-type');
+        var input = $("input[name='" + fieldName + "']");
+        var currentVal = parseInt(input.val());
+
+        if (!isNaN(currentVal)) {
+            if (type == 'minus') {
+
+                if (currentVal > input.attr('min')) {
+                    input.val(currentVal - 1).change();
+                }
+                if (parseInt(input.val()) == input.attr('min')) {
+                    $(this).attr('disabled', true);
+                }
+
+            } else if (type == 'plus') {
+
+                if (currentVal < input.attr('max')) {
+                    input.val(currentVal + 1).change();
+                }
+                if (parseInt(input.val()) == input.attr('max')) {
+                    $(this).attr('disabled', true);
+                }
+
+            }
+        } else {
+            input.val(0);
+        }
+    });
+    $('.input-number').focusin(function () {
+        $(this).data('oldValue', $(this).val());
+    });
+    $('.input-number').change(function () {
+
+        minValue = parseInt($(this).attr('min'));
+        maxValue = parseInt($(this).attr('max'));
+        valueCurrent = parseInt($(this).val());
+
+        var name;
+        name = $(this).attr('name');
+        if (valueCurrent >= minValue) {
+            $(".btn-number[data-type='minus'][data-field='" + name + "']").removeAttr('disabled')
+        } else {
+            alert('Sorry, the minimum value was reached');
+            $(this).val($(this).data('oldValue'));
+        }
+        if (valueCurrent <= maxValue) {
+            $(".btn-number[data-type='plus'][data-field='" + name + "']").removeAttr('disabled')
+        } else {
+            alert('Sorry, the maximum value was reached');
+            $(this).val($(this).data('oldValue'));
+        }
+
+
+    });
+
+    $(".input-number").keydown(function (e) {
+        // Allow: backspace, delete, tab, escape, enter and .
+        if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 190]) !== -1 ||
+            // Allow: Ctrl+A
+            (e.keyCode == 65 && e.ctrlKey === true) ||
+            // Allow: home, end, left, right
+            (e.keyCode >= 35 && e.keyCode <= 39)) {
+            // let it happen, don't do anything
+            return;
+        }
+        // Ensure that it is a number and stop the keypress
+        if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+            e.preventDefault();
+        }
+    });
+
+    //Stop Default Button Close For Toggle
+
+    jQuery('.cs-traveler-selection .dropdown-toggle').on('click', function (e) {
+        $(this).next().toggle();
+    });
+
+    $(document).ready(function() {
+        $(".btn-flight-type-menu .dropdown-item").click(function() {
+            var title = $(this).attr("data-title");
+            var target = $(this).attr("data-bind");
+            var data_value = $(this).attr("data-value");
+            var data_target = data_value.split(" ");
+            var anchor = document.getElementById('dropdownMenuLink');
+            anchor.innerHTML = title;
+            $("div#"+target).addClass('visible');
+            $("div#"+target).removeClass('hide');
+            $("div."+data_target[0]).addClass('hide');
+            $("div."+data_target[1]).addClass('hide');
+            $("div."+data_target[0]).removeClass('visible');
+            $("div."+data_target[1]).removeClass('visible');
+        });
+    });
+
+    function AdRow() {
+        event.preventDefault();
+        var append_target = document.getElementById("additional-row");
+
+        var x= "<div class=\"col-md-12 additional-row\">\n" +
+            "                        <div class=\"row\">\n" +
+            "                            <div class=\"col-md-3 col-sm-12 cs-padding\">\n" +
+            "                                <div class=\"form-group mb-3\">\n" +
+            "                                    <div class=\"input-group input-group-alternative\">\n" +
+            "                                        <div class=\"input-group-prepend\">\n" +
+            "                                            <span class=\"input-group-text\"><i class=\"fa fa-plane\"></i></span>\n" +
+            "                                        </div>\n" +
+            "                                        <input class=\"form-control\" placeholder=\"From\" type=\"text\">\n" +
+            "                                    </div>\n" +
+            "                                </div>\n" +
+            "                            </div>\n" +
+            "                            <div class=\"col-md-3 col-sm-12 cs-padding\">\n" +
+            "                                <div class=\"input-group input-group-alternative\">\n" +
+            "                                    <div class=\"input-group-prepend\">\n" +
+            "                                        <span class=\"input-group-text\"><i class=\"fa fa-plane\"></i></span>\n" +
+            "                                    </div>\n" +
+            "                                    <input class=\"form-control\" placeholder=\"To\" type=\"text\">\n" +
+            "                                </div>\n" +
+            "                            </div>\n" +
+            "                            <div class=\"col-md-2 col-sm-12 cs-padding\">\n" +
+            "                                <div class=\"form-group\">\n" +
+            "                                    <div class=\"input-group\">\n" +
+            "                                        <div class=\"input-group-prepend\">\n" +
+            "                                            <span class=\"input-group-text\"><i class=\"ni ni-calendar-grid-58\"></i></span>\n" +
+            "                                        </div>\n" +
+            "                                        <input name=\"dates\" class=\"form-control\" placeholder=\"Start Date\" type=\"text\"\n" +
+            "                                               value=\"\">\n" +
+            "                                    </div>\n" +
+            "                                </div>\n" +
+            "                            </div>\n" +
+            "                            <div class=\"col-md-3 col-sm-12 cs-padding\">\n" +
+            "                                <div class=\"form-group mb-3\">\n" +
+            "                                    <div class=\"input-group input-group-alternative\">\n" +
+            "                                        <div class=\"input-group-prepend\">\n" +
+            "                                            <span class=\"input-group-text\"><i class=\"fa fa-business-time\"></i></span>\n" +
+            "                                        </div>\n" +
+            "                                        <input class=\"form-control\" placeholder=\"Economy\" type=\"text\">\n" +
+            "                                    </div>\n" +
+            "                                </div>\n" +
+            "                            </div>\n" +
+            "                            <div class=\"col-md-1 col-sm-12 cs-padding\">\n" +
+            "                                <a class=\"btn btn-primary\" href=\"#\" onclick=\"ClearSingleRow()\"><i class=\"fa fa-times\"></i></a>\n" +
+            "                            </div>\n" +
+            "                        </div>\n" +
+            "                    </div>";
+
+        if(append_target !=null){
+            $(x).insertAfter("#additional-row");
+        } else{
+            $(x).insertAfter(".first-row");
+        }
+    }
+
+    function ClearAllRow() {
+        event.preventDefault();
+        var x = document.getElementsByClassName("additional-row");
+        if (x !=null) {
+            $(".additional-row").remove();
+        }
+    }
+
+    $(document).ready(function() {
+        $('.owl-carousel').owlCarousel({
+            loop: true,
+            margin: 10,
+            dots: false,
+            responsiveClass: true,
+            responsive: {
+                0: {
+                    items: 2,
+                    nav: true
+                },
+                600: {
+                    items: 3,
+                    nav: false
+                },
+                1000: {
+                    items: 4,
+                    nav: true,
+                    loop: false,
+                    margin: 20
+                }
+            }
+        })
+    })
+
+</script>
+</body>
+
+</html>

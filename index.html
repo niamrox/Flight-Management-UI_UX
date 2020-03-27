@@ -1,0 +1,2281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="poceniletalskekarte.si flight booking">
+    <meta name="author" content="poceniletalskekarte.si">
+    <title>Flight List View</title>
+    <!-- Favicon -->
+    <link href="./assets/img/brand/favicon.png" rel="icon" type="image/png">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <!-- Icons -->
+    <link href="./assets/vendor/nucleo/css/nucleo.css" rel="stylesheet">
+    <link href="./assets/vendor/font-awesome/css/fontawesome.min.css" rel="stylesheet">
+    <link href="./assets/vendor/font-awesome/css/brands.min.css" rel="stylesheet">
+    <link href="./assets/vendor/font-awesome/css/solid.min.css" rel="stylesheet">
+    <link href="./assets/vendor/daterangepicker/daterangepicker.css" rel="stylesheet" type="text/css"/>
+    <!-- Argon CSS -->
+    <link type="text/css" href="./assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+<header class="header-global">
+    <nav id="navbar-main" class="navbar navbar-main navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand mr-lg-5" href="./index.html">
+                poceniletalskekarte.si
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_global"
+                    aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse" id="navbar_global">
+                <div class="navbar-collapse-header">
+                    <div class="row">
+                        <div class="col-6 collapse-brand">
+                            <a href="./index.html">
+                                <img alt="image" src="./assets/img/logo.png">
+                            </a>
+                        </div>
+                        <div class="col-6 collapse-close">
+                            <button type="button" class="navbar-toggler" data-toggle="collapse"
+                                    data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false"
+                                    aria-label="Toggle navigation">
+                                <span></span>
+                                <span></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link" role="button">
+                            <i class="ni ni-ui-04 d-lg-none"></i>
+                            <span class="nav-link-inner--text">Book Flight</span>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link" data-toggle="dropdown" role="button">
+                            <i class="ni ni-collection d-lg-none"></i>
+                            <span class="nav-link-inner--text">Airports</span>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav align-items-lg-center ml-lg-auto">
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-icon" href="#" target="_blank"
+                           data-toggle="tooltip" title="Like us on Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                            <span class="nav-link-inner--text d-lg-none">Facebook</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-icon" href="#"
+                           target="_blank" data-toggle="tooltip" title="Follow us on Instagram">
+                            <i class="fab fa-instagram"></i>
+                            <span class="nav-link-inner--text d-lg-none">Instagram</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-icon" href="#" target="_blank"
+                           data-toggle="tooltip" title="Follow us on Twitter">
+                            <i class="fab fa-twitter"></i>
+                            <span class="nav-link-inner--text d-lg-none">Twitter</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-icon"
+                           href="#" target="_blank"
+                           data-toggle="tooltip" title="Star us on Github">
+                            <i class="fab fa-github"></i>
+                            <span class="nav-link-inner--text d-lg-none">Github</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<main>
+    <section class="bg-toggle-btn d-block d-lg-none d-xl-none d-md-none">
+        <div class="bg-toggle-btn__wrap">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <p>
+                            <a class="btn btn-primary" data-toggle="collapse" href="#SearchFields" role="button" aria-expanded="false" aria-controls="SearchFields">
+                                <i class="fa fa-search"></i> Search Box
+                            </a>
+                            <a class="btn btn-primary" data-toggle="collapse" href="#SearchFilterSidebar" role="button" aria-expanded="false" aria-controls="SearchFilterSidebar">
+                                <i class="fa fa-filter"></i> Search Filter
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section-top bg-yellow collapse show" id="SearchFields">
+        <div class="section-top__wrap">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-2 col-sm-12 cs-padding">
+                        <div class="form-group mb-3">
+                            <div class="input-group input-group-alternative">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fa fa-plane"></i></span>
+                                </div>
+                                <input class="form-control" placeholder="From" type="text">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-12 cs-padding">
+                        <div class="input-group input-group-alternative">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fa fa-plane"></i></span>
+                            </div>
+                            <input class="form-control" placeholder="To" type="text">
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-12 cs-padding">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
+                                </div>
+                                <input name="dates" class="form-control" placeholder="Start Date" type="text"
+                                       value="06/18/2019">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-12 cs-padding">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
+                                </div>
+                                <input name="dates" class="form-control" placeholder="Return Date" type="text"
+                                       value="06/18/2019">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-12 float-right text-right cs-padding cs-traveler-selection">
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle input-group-alternative text-left"
+                                    type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">
+                                <i class="fa fa-user-alt"></i> 1 adult, Economy
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <div class="dropdown-menu__wrap">
+                                    <h4> Cabin class </h4>
+                                    <ul class="list-unstyled list-inline flight-class-list">
+                                        <li><a class="btn flight-class" href="#">Economy</a></li>
+                                        <li><a class="btn flight-class" href="#">Business</a></li>
+                                        <li><a class="btn flight-class" href="#">Premium Economy</a></li>
+                                        <li><a class="btn flight-class" href="#">First</a></li>
+                                    </ul>
+                                    <h4> Travellers </h4>
+                                    <ul class="list-unstyled travgellers-list space-between">
+                                        <li>
+                                            <span class="travellers-type">Adults</span>
+                                            <div class="text-right d-inline numbers-button-group">
+                                                <div class="input-group">
+                                                    <span class="input-group-btn">
+                                                          <button type="button" class="btn btn-default btn-number"
+                                                                  disabled="disabled" data-type="minus"
+                                                                  data-field="quant[1]">
+                                                              <span class="fa fa-minus"></span>
+                                                          </button>
+                                                    </span>
+                                                    <input type="text" name="quant[1]" class="form-control input-number"
+                                                           value="1" min="1" max="10">
+                                                    <span class="input-group-btn">
+                                                          <button type="button" class="btn btn-default btn-number"
+                                                                  data-type="plus" data-field="quant[1]">
+                                                              <span class="fa fa-plus"></span>
+                                                          </button>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <span class="travellers-type">Children</span>
+                                            <div class="text-right d-inline numbers-button-group">
+                                                <div class="input-group">
+                                                    <span class="input-group-btn">
+                                                          <button type="button" class="btn btn-default btn-number"
+                                                                  disabled="disabled" data-type="minus"
+                                                                  data-field="quant[1]">
+                                                              <span class="fa fa-minus"></span>
+                                                          </button>
+                                                    </span>
+                                                    <input type="text" name="quant[1]" class="form-control input-number"
+                                                           value="1" min="1" max="10">
+                                                    <span class="input-group-btn">
+                                                          <button type="button" class="btn btn-default btn-number"
+                                                                  data-type="plus" data-field="quant[1]">
+                                                              <span class="fa fa-plus"></span>
+                                                          </button>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <span class="travellers-type">Baby</span>
+                                            <div class="text-right d-inline numbers-button-group">
+                                                <div class="input-group">
+                                                    <span class="input-group-btn">
+                                                          <button type="button" class="btn btn-default btn-number"
+                                                                  disabled="disabled" data-type="minus"
+                                                                  data-field="quant[1]">
+                                                              <span class="fa fa-minus"></span>
+                                                          </button>
+                                                    </span>
+                                                    <input type="text" name="quant[1]" class="form-control input-number"
+                                                           value="1" min="1" max="10">
+                                                    <span class="input-group-btn">
+                                                          <button type="button" class="btn btn-default btn-number"
+                                                                  data-type="plus" data-field="quant[1]">
+                                                              <span class="fa fa-plus"></span>
+                                                          </button>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-sm-12 cs-padding">
+                        <a class="btn btn-primary" href="#"><i class="fa fa-search"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="search-filter-mobile-version collapse" id="SearchFilterSidebar">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="mobile-filter">
+                        <div class="mobile-search-filter-content">
+                            <div class="sidebar-wrap">
+                                <div class="sidebar-wrap__inner">
+                                    <div class="sidebar-header">
+                                        <h4>Search Filter</h4>
+                                        <div class="sidebar-header__subtitle">
+                                            578 of 987 flights
+                                        </div>
+                                    </div>
+                                    <div class="spacer"></div>
+                                    <div class="alert-container">
+                                        <div class="alert-container__wrap">
+                                            <div class="info-content">
+                                                <i class="fas fa-chart-line big-icon float-left"></i> Now's
+                                                a great<br> time to
+                                                book <i
+                                                    class="fa fa-info-circle float-right icon-absolute"></i>
+                                            </div>
+                                            <div class="content-bottom">
+                                                <span>Price Alert</span>
+                                                <span class="float-right">
+                                          <label class="custom-toggle">
+                                            <input id="m-alert-tootle" type="checkbox">
+                                            <span class="custom-toggle-slider rounded-circle"></span>
+                                          </label>
+                                        </span>
+                                            </div>
+                                        </div>
+                                        <div class="modal fade" id="m-modal-notification" tabindex="-1"
+                                             role="dialog"
+                                             aria-labelledby="m-modal-notification" aria-hidden="true">
+                                            <div class="modal-dialog modal-danger modal-dialog-centered modal-"
+                                                 role="document">
+                                                <div class="modal-content bg-gradient-danger">
+                                                    <div class="modal-header">
+                                                        <h6 class="modal-title"
+                                                            id="m-modal-title-notification">Create a Price
+                                                            Alert, free</h6>
+                                                        <button type="button" class="close"
+                                                                data-dismiss="modal"
+                                                                aria-label="Close">
+                                                            <span aria-hidden="true">×</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="py-3 text-center">
+                                                            <i class="ni ni-bell-55 ni-3x"></i>
+                                                            <h4 class="heading mt-4"> DAC ▸ CXB | Sat 26/10
+                                                                - Mon 4/11</h4>
+                                                            <br>
+                                                            <div class="form-group">
+                                                                <input type="text"
+                                                                       placeholder="Input Your Email"
+                                                                       class="form-control form-control-alternative"/>
+                                                            </div>
+
+                                                            <div class="custom-control custom-checkbox mb-3 float-left">
+                                                                <input class="custom-control-input"
+                                                                       id="m-customCheck302"
+                                                                       type="checkbox" checked>
+                                                                <label class="custom-control-label"
+                                                                       for="m-customCheck302">
+                                                                    <span>Checked</span>
+                                                                </label>
+                                                                <p class="d-inline">Email me Cheapflights's
+                                                                    favourite deals</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-white">Save
+                                                            Price Alert
+                                                        </button>
+                                                        <button type="button"
+                                                                class="btn btn-link text-white ml-auto"
+                                                                data-dismiss="modal">Close
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                    <div class="spacer"></div>
+                                    <div class="accordian-filter departure-airport">
+                                        <div class="accordian-filter__wrapper">
+                                            <a class="btn btn-full accordion-btn text-left"
+                                               data-toggle="collapse"
+                                               href="#mDepartureAirports" role="button" aria-expanded="false"
+                                               aria-controls="mDepartureAirports">
+                                                Departure Airports <i
+                                                    class="fa fa-angle-down text-right"></i>
+                                            </a>
+                                            <div class="collapse show" id="mDepartureAirports">
+                                                <div class="card card-body">
+                                                    <ul class="airport-list list-unstyled checkbox-list no-margin-bottom">
+                                                        <li class="airport-name">
+                                                            <div class="custom-control custom-checkbox mb-1">
+                                                                <input class="custom-control-input"
+                                                                       id="mcustomCheck1"
+                                                                       type="checkbox">
+                                                                <label class="custom-control-label"
+                                                                       for="mcustomCheck1">
+                                                                    <span>ZAG: Franjo Tudman</span><span
+                                                                        class="priceBox"> £175</span>
+                                                                </label>
+                                                            </div>
+                                                        </li>
+                                                        <li class="airport-name">
+                                                            <div class="custom-control custom-checkbox mb-1">
+                                                                <input class="custom-control-input"
+                                                                       id="mcustomCheck2"
+                                                                       type="checkbox">
+                                                                <label class="custom-control-label"
+                                                                       for="mcustomCheck2">
+                                                                    <span>ZAG: Franjo Tudman</span><span
+                                                                        class="priceBox"> £175</span>
+                                                                </label>
+                                                            </div>
+                                                        </li>
+                                                        <li class="airport-name">
+                                                            <div class="custom-control custom-checkbox mb-1">
+                                                                <input class="custom-control-input"
+                                                                       id="mcustomCheck3"
+                                                                       type="checkbox">
+                                                                <label class="custom-control-label"
+                                                                       for="mcustomCheck3">
+                                                                    <span>ZAG: Franjo Tudman</span><span
+                                                                        class="priceBox"> £175</span>
+                                                                </label>
+                                                            </div>
+                                                        </li>
+                                                        <li class="airport-name">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input class="custom-control-input"
+                                                                       id="mcustomCheck4"
+                                                                       type="checkbox">
+                                                                <label class="custom-control-label"
+                                                                       for="mcustomCheck4">
+                                                                    <span>ZAG: Franjo Tudman</span><span
+                                                                        class="priceBox"> £175</span>
+                                                                </label>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="spacer"></div>
+                                    <div class="accordian-filter date">
+                                        <div class="accordian-filter__wrapper">
+                                            <a class="btn btn-full accordion-btn text-left"
+                                               data-toggle="collapse" href="#mDates"
+                                               role="button" aria-expanded="false" aria-controls="mDates">
+                                                Dates <i class="fa fa-angle-down text-right"></i>
+                                            </a>
+                                            <div class="collapse show" id="mDates">
+                                                <div class="card card-body">
+                                                    <div class="form-group">
+                                                        <div class="input-group">
+                                                            <div class="input-group-prepend">
+                                                        <span class="input-group-text"><i
+                                                                class="ni ni-calendar-grid-58"></i></span>
+                                                            </div>
+                                                            <input name="dates" class="form-control"
+                                                                   placeholder="Start date"
+                                                                   type="text" value="06/18/2019">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="spacer"></div>
+                                    <div class="accordian-filter cabin-class-filter">
+                                        <div class="accordian-filter__wrapper">
+                                            <a class="btn btn-full accordion-btn text-left"
+                                               data-toggle="collapse"
+                                               href="#mCabinClassFilter" role="button" aria-expanded="false"
+                                               aria-controls="mCabinClassFilter">
+                                                Cabin Class Filter <i
+                                                    class="fa fa-angle-down text-right"></i>
+                                            </a>
+                                            <div class="collapse show" id="mCabinClassFilter">
+                                                <div class="card card-body">
+                                                    <ul class="airport-list list-unstyled checkbox-list no-margin-bottom">
+                                                        <li>
+                                                            <div class="custom-control custom-checkbox mb-1">
+                                                                <input class="custom-control-input"
+                                                                       id="mcustomCheck6"
+                                                                       type="checkbox">
+                                                                <label class="custom-control-label"
+                                                                       for="mcustomCheck6">
+                                                                    <span>Economy</span>
+                                                                </label>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="custom-control custom-checkbox mb-1">
+                                                                <input class="custom-control-input"
+                                                                       id="mcustomCheck7"
+                                                                       type="checkbox">
+                                                                <label class="custom-control-label"
+                                                                       for="mcustomCheck7">
+                                                                    <span>Premium Economy</span>
+                                                                </label>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input class="custom-control-input"
+                                                                       id="mcustomCheck8"
+                                                                       type="checkbox">
+                                                                <label class="custom-control-label"
+                                                                       for="mcustomCheck8">
+                                                                    <span>Business</span>
+                                                                </label>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="spacer"></div>
+                                    <div class="accordian-filter price-slider">
+                                        <div class="accordian-filter__wrapper">
+                                            <a class="btn btn-full accordion-btn text-left"
+                                               data-toggle="collapse"
+                                               href="#mpriceSlider" role="button" aria-expanded="false"
+                                               aria-controls="mpriceSlider">
+                                                Price Filter <i class="fa fa-angle-down text-right"></i>
+                                            </a>
+                                            <div class="collapse show" id="mpriceSlider">
+                                                <div class="card card-body">
+                                                    <div class="mt-5">
+                                                        <!-- Range slider container -->
+                                                        <div id="minput-slider-range"
+                                                             data-range-value-min="0"
+                                                             data-range-value-max="5000"></div>
+                                                        <!-- Range slider values -->
+                                                        <div class="row d-none">
+                                                            <div class="col-6">
+                                                        <span class="range-slider-value value-low"
+                                                              data-range-value-low="1500"
+                                                              id="minput-slider-range-value-low"></span>
+                                                            </div>
+                                                            <div class="col-6 text-right">
+                                                        <span class="range-slider-value value-high"
+                                                              data-range-value-high="3000"
+                                                              id="minput-slider-range-value-high"></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="spacer"></div>
+                                    <div class="accordian-filter od-stops">
+                                        <div class="accordian-filter__wrapper">
+                                            <a class="btn btn-full accordion-btn text-left"
+                                               data-toggle="collapse"
+                                               href="#mNumberOdStops" role="button" aria-expanded="false"
+                                               aria-controls="mNumberOdStops">
+                                                Number od Stops <i class="fa fa-angle-down text-right"></i>
+                                            </a>
+                                            <div class="collapse show" id="mNumberOdStops">
+                                                <div class="card card-body">
+                                                    <ul class="airport-list list-unstyled checkbox-list no-margin-bottom">
+                                                        <li>
+                                                            <div class="custom-control custom-checkbox mb-1">
+                                                                <input class="custom-control-input"
+                                                                       id="mcustomCheck9"
+                                                                       type="checkbox">
+                                                                <label class="custom-control-label"
+                                                                       for="mcustomCheck9">
+                                                                    <span>Direct Flight</span>
+                                                                </label>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="custom-control custom-checkbox mb-1">
+                                                                <input class="custom-control-input"
+                                                                       id="mcustomCheck10"
+                                                                       type="checkbox">
+                                                                <label class="custom-control-label"
+                                                                       for="mcustomCheck10">
+                                                                    <span>Max 1 Stop</span>
+                                                                </label>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="custom-control custom-checkbox mb-1">
+                                                                <input class="custom-control-input"
+                                                                       id="mcustomCheck11"
+                                                                       type="checkbox">
+                                                                <label class="custom-control-label"
+                                                                       for="mcustomCheck11">
+                                                                    <span>Max 2 Stop</span>
+                                                                </label>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input class="custom-control-input"
+                                                                       id="mcustomCheck12"
+                                                                       type="checkbox">
+                                                                <label class="custom-control-label"
+                                                                       for="mcustomCheck12">
+                                                                    <span>Multiple Stops</span>
+                                                                </label>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="spacer"></div>
+                                    <div class="accordian-filter baggage">
+                                        <div class="accordian-filter__wrapper">
+                                            <a class="btn btn-full accordion-btn text-left"
+                                               data-toggle="collapse"
+                                               href="#mBaggage" role="button" aria-expanded="false"
+                                               aria-controls="mBaggage">
+                                                Baggage <i class="fa fa-angle-down text-right"></i>
+                                            </a>
+                                            <div class="collapse show" id="mBaggage">
+                                                <div class="card card-body">
+                                                    <ul class="airport-list list-unstyled checkbox-list no-margin-bottom">
+                                                        <li>
+                                                            <div class="custom-control custom-checkbox mb-1">
+                                                                <input class="custom-control-input"
+                                                                       id="mcustomCheck13"
+                                                                       type="checkbox">
+                                                                <label class="custom-control-label"
+                                                                       for="mcustomCheck13">
+                                                                    <span>Included</span>
+                                                                </label>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="custom-control custom-checkbox mb-1">
+                                                                <input class="custom-control-input"
+                                                                       id="mcustomCheck14"
+                                                                       type="checkbox">
+                                                                <label class="custom-control-label"
+                                                                       for="mcustomCheck14">
+                                                                    <span>Not Included</span>
+                                                                </label>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input class="custom-control-input"
+                                                                       id="mcustomCheck15"
+                                                                       type="checkbox">
+                                                                <label class="custom-control-label"
+                                                                       for="mcustomCheck15">
+                                                                    <span>Partly Included</span>
+                                                                </label>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="spacer"></div>
+                                    <div class="accordian-filter timesfilter">
+                                        <div class="accordian-filter__wrapper">
+                                            <a class="btn btn-full accordion-btn text-left"
+                                               data-toggle="collapse"
+                                               href="#mTimesFilter" role="button" aria-expanded="false"
+                                               aria-controls="mTimesFilter">
+                                                Times Filter <i class="fa fa-angle-down text-right"></i>
+                                            </a>
+                                            <div class="collapse show" id="mTimesFilter">
+                                                <div class="card card-body">
+                                                    <div class="nav-wrapper">
+                                                        <ul class="nav nav-pills nav-fill flex-column flex-md-row"
+                                                            id="mtabs-icons-text" role="tablist">
+                                                            <li class="nav-item">
+                                                                <a class="nav-link mb-sm-3 mb-md-0 active"
+                                                                   id="mtabs-icons-text-1-tab"
+                                                                   data-toggle="tab"
+                                                                   href="#mtabs-icons-text-1" role="tab"
+                                                                   aria-controls="mtabs-icons-text-1"
+                                                                   aria-selected="true"><i
+                                                                        class="fas fa-plane-departure"></i>
+                                                                    Take off</a>
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a class="nav-link mb-sm-3 mb-md-0"
+                                                                   id="mtabs-icons-text-2-tab"
+                                                                   data-toggle="tab"
+                                                                   href="#mtabs-icons-text-2" role="tab"
+                                                                   aria-controls="mtabs-icons-text-2"
+                                                                   aria-selected="false"><i
+                                                                        class="fas fa-plane-arrival"></i>
+                                                                    Landing</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="card shadow">
+                                                        <div class="card-body">
+                                                            <div class="tab-content" id="mmyTabContent">
+                                                                <div class="tab-pane fade show active"
+                                                                     id="mtabs-icons-text-1"
+                                                                     role="tabpanel"
+                                                                     aria-labelledby="tabs-icons-text-1-tab">
+                                                                    <h6>Take-off from ZAG</h6>
+                                                                    <span class="starting-value-1 float-left">Thu 10:00</span>
+                                                                    <span class="ending-value-1 float-right">22:00</span>
+                                                                    <div class="clearfix"></div>
+                                                                    <div class="wrap-slider">
+                                                                        <!-- Range slider container -->
+                                                                        <div id="minput-slider-range-1"
+                                                                             data-range-value-min="0"
+                                                                             data-range-value-max="24"></div>
+                                                                        <!-- Range slider values -->
+                                                                        <div class="row d-none">
+                                                                            <div class="col-6">
+                                                                        <span class="range-slider-value value-low"
+                                                                              data-range-value-low="5"
+                                                                              id="minput-slider-range-value-low-1"></span>
+                                                                            </div>
+                                                                            <div class="col-6 text-right">
+                                                                        <span class="range-slider-value value-high"
+                                                                              data-range-value-high="15"
+                                                                              id="minput-slider-range-value-high-1"></span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="tab-pane fade"
+                                                                     id="mtabs-icons-text-2"
+                                                                     role="tabpanel"
+                                                                     aria-labelledby="tabs-icons-text-2-tab">
+                                                                    <h6>Landing to ZAG</h6>
+                                                                    <span class="starting-value-1 float-left">Thu 10:00</span>
+                                                                    <span class="ending-value-1 float-right">22:00</span>
+                                                                    <div class="clearfix"></div>
+                                                                    <div class="wrap-slider">
+                                                                        <!-- Range slider container -->
+                                                                        <div id="minput-slider-range-2"
+                                                                             data-range-value-min="0"
+                                                                             data-range-value-max="24"></div>
+                                                                        <!-- Range slider values -->
+                                                                        <div class="row d-none">
+                                                                            <div class="col-6">
+                                                                        <span class="range-slider-value value-low"
+                                                                              data-range-value-low="5"
+                                                                              id="minput-slider-range-value-low-2"></span>
+                                                                            </div>
+                                                                            <div class="col-6 text-right">
+                                                                        <span class="range-slider-value value-high"
+                                                                              data-range-value-high="15"
+                                                                              id="minput-slider-range-value-high-2"></span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="spacer"></div>
+                                    <div class="accordian-filter journey-duration-filter">
+                                        <div class="accordian-filter__wrapper">
+                                            <a class="btn btn-full accordion-btn text-left"
+                                               data-toggle="collapse"
+                                               href="#mJourneyDuration" role="button" aria-expanded="false"
+                                               aria-controls="mJourneyDuration">
+                                                Journey duration <i class="fa fa-angle-down text-right"></i>
+                                            </a>
+                                            <div class="collapse show" id="mJourneyDuration">
+                                                <div class="card card-body">
+                                                    <h6>Flight leg</h6>
+                                                    <div class="time-from-to">
+                                                        <span class="starting-value-1 float-left">10:00</span>
+                                                        <span class="ending-value-1 float-right">22:00</span>
+                                                        <div class="clearfix"></div>
+                                                    </div>
+                                                    <div class="wrap-slider">
+                                                        <!-- Range slider container -->
+                                                        <div id="minput-slider-range-3"
+                                                             data-range-value-min="0"
+                                                             data-range-value-max="24"></div>
+                                                        <!-- Range slider values -->
+                                                        <div class="row d-none">
+                                                            <div class="col-6">
+                                                        <span class="range-slider-value value-low"
+                                                              data-range-value-low="5"
+                                                              id="minput-slider-range-value-low-3"></span>
+                                                            </div>
+                                                            <div class="col-6 text-right">
+                                                        <span class="range-slider-value value-high"
+                                                              data-range-value-high="15"
+                                                              id="minput-slider-range-value-high-3"></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <h6>Stopover</h6>
+                                                    <div class="time-from-to">
+                                                        <span class="starting-value-1 float-left">10:00</span>
+                                                        <span class="ending-value-1 float-right">22:00</span>
+                                                        <div class="clearfix"></div>
+                                                    </div>
+                                                    <div class="wrap-slider">
+                                                        <!-- Range slider container -->
+                                                        <div id="minput-slider-range-4"
+                                                             data-range-value-min="0"
+                                                             data-range-value-max="24"></div>
+                                                        <!-- Range slider values -->
+                                                        <div class="row d-none">
+                                                            <div class="col-6">
+                                                        <span class="range-slider-value value-low"
+                                                              data-range-value-low="5"
+                                                              id="minput-slider-range-value-low-4"></span>
+                                                            </div>
+                                                            <div class="col-6 text-right">
+                                                        <span class="range-slider-value value-high"
+                                                              data-range-value-high="15"
+                                                              id="minput-slider-range-value-high-4"></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="spacer"></div>
+                                    <div class="accordian-filter airports">
+                                        <div class="accordian-filter__wrapper">
+                                            <a class="btn btn-full accordion-btn text-left"
+                                               data-toggle="collapse"
+                                               href="#mAirports" role="button" aria-expanded="false"
+                                               aria-controls="mAirports">
+                                                Airports <i class="fa fa-angle-down text-right"></i>
+                                            </a>
+                                            <div class="collapse show" id="mAirports">
+                                                <div class="card card-body">
+                                                    <ul class="airport-list list-unstyled checkbox-list no-margin-bottom">
+                                                        <li class="airport-name">
+                                                            <div class="custom-control custom-checkbox mb-1">
+                                                                <input class="custom-control-input"
+                                                                       id="mcustomCheck16"
+                                                                       type="checkbox">
+                                                                <label class="custom-control-label"
+                                                                       for="mcustomCheck16">
+                                                                    <span>Depart/return same</span>
+                                                                </label>
+                                                            </div>
+                                                        </li>
+                                                        <li class="airport-name">
+                                                            <div class="custom-control custom-checkbox mb-1">
+                                                                <input class="custom-control-input"
+                                                                       id="mcustomCheck17"
+                                                                       type="checkbox">
+                                                                <label class="custom-control-label"
+                                                                       for="mcustomCheck17">
+                                                                    <span>CDG: Charles de Gau</span>
+                                                                </label>
+                                                            </div>
+                                                        </li>
+                                                        <li class="airport-name">
+                                                            <div class="custom-control custom-checkbox mb-1">
+                                                                <input class="custom-control-input"
+                                                                       id="mcustomCheck18"
+                                                                       type="checkbox">
+                                                                <label class="custom-control-label"
+                                                                       for="mcustomCheck18">
+                                                                    <span>BVA: Beauvais-Tille</span>
+                                                                </label>
+                                                            </div>
+                                                        </li>
+                                                        <li class="airport-name">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input class="custom-control-input"
+                                                                       id="mcustomCheck19"
+                                                                       type="checkbox">
+                                                                <label class="custom-control-label"
+                                                                       for="mcustomCheck19">
+                                                                    <span>ORY: Orly</span>
+                                                                </label>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="spacer"></div>
+                                    <div class="accordian-filter arilines">
+                                        <div class="accordian-filter__wrapper">
+                                            <a class="btn btn-full accordion-btn text-left"
+                                               data-toggle="collapse"
+                                               href="#mArilines" role="button" aria-expanded="false"
+                                               aria-controls="mArilines">
+                                                Arilines Filter <i class="fa fa-angle-down text-right"></i>
+                                            </a>
+                                            <div class="collapse show" id="mArilines">
+                                                <div class="card card-body">
+                                                    <ul class="airport-list list-unstyled checkbox-list no-margin-bottom">
+                                                        <li class="arilines">
+                                                            <div class="custom-control custom-checkbox mb-1">
+                                                                <input class="custom-control-input"
+                                                                       id="mcustomCheck20"
+                                                                       type="checkbox">
+                                                                <label class="custom-control-label"
+                                                                       for="mcustomCheck20">
+                                                                    <span>Oneworld</span>
+                                                                </label>
+                                                            </div>
+                                                        </li>
+                                                        <li class="arilines">
+                                                            <div class="custom-control custom-checkbox mb-1">
+                                                                <input class="custom-control-input"
+                                                                       id="mcustomCheck21"
+                                                                       type="checkbox">
+                                                                <label class="custom-control-label"
+                                                                       for="customCheck21">
+                                                                    <span>SkyTeam</span>
+                                                                </label>
+                                                            </div>
+                                                        </li>
+                                                        <li class="arilines">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input class="custom-control-input"
+                                                                       id="mcustomCheck22"
+                                                                       type="checkbox">
+                                                                <label class="custom-control-label"
+                                                                       for="mcustomCheck22">
+                                                                    <span>Star Alliance</span>
+                                                                </label>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="spacer"></div>
+                                    <div class="accordian-filter faq">
+                                        <div class="accordian-filter__wrapper">
+                                            <a class="btn btn-full accordion-btn text-left"
+                                               data-toggle="collapse" href="#mFaq"
+                                               role="button" aria-expanded="false" aria-controls="mFaq">
+                                                Common FAQ<i class="fa fa-angle-down text-right"></i>
+                                            </a>
+                                            <div class="collapse show" id="mFaq">
+                                                <div class="card card-body">
+                                                    <ul class="airport-list list-unstyled checkbox-list no-margin-bottom">
+                                                        <li>
+                                                            <i class="fa fa-book"></i> <a href="#" class="">General
+                                                            knowledge on
+                                                            payment</a>
+                                                        </li>
+                                                        <li>
+                                                            <i class="fa fa-book"></i> <a href="#" class="">Refund
+                                                            Policy</a>
+                                                        </li>
+                                                        <li>
+                                                            <i class="fa fa-book"></i> <a href="#" class="">Service
+                                                            rules and
+                                                            regulation</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="spacer"></div>
+                                    <div class="accordian-filter lastsearch">
+                                        <div class="accordian-filter__wrapper">
+                                            <a class="btn btn-full accordion-btn text-left"
+                                               data-toggle="collapse"
+                                               href="#mLastSearch" role="button" aria-expanded="false"
+                                               aria-controls="mLastSearch">
+                                                My Searches <i class="fa fa-angle-down text-right"></i>
+                                            </a>
+                                            <div class="collapse show" id="mLastSearch">
+                                                <div class="card card-body">
+                                                    <ul class="airport-list list-unstyled checkbox-list no-margin-bottom">
+                                                        <li class="arilines">
+                                                            <div class="custom-control custom-checkbox mb-1">
+                                                                <input class="custom-control-input"
+                                                                       id="mcustomCheck30"
+                                                                       type="checkbox">
+                                                                <label class="custom-control-label"
+                                                                       for="mcustomCheck30">
+                                                                    <span>Dhk > Cox</span>
+                                                                </label>
+                                                            </div>
+                                                        </li>
+                                                        <li class="arilines">
+                                                            <div class="custom-control custom-checkbox mb-1">
+                                                                <input class="custom-control-input"
+                                                                       id="mcustomCheck31"
+                                                                       type="checkbox">
+                                                                <label class="custom-control-label"
+                                                                       for="mcustomCheck31">
+                                                                    <span>Cox > Syl</span>
+                                                                </label>
+                                                            </div>
+                                                        </li>
+                                                        <li class="arilines">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input class="custom-control-input"
+                                                                       id="mcustomCheck32"
+                                                                       type="checkbox">
+                                                                <label class="custom-control-label"
+                                                                       for="mcustomCheck32">
+                                                                    <span>Ctg > Dhk</span>
+                                                                </label>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="spacer"></div>
+                                </div>
+                                <!--End of sidebar-wrap__inner-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section-components pb-0">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-3 offset-md-0 sidebar bg-secondary d-none d-md-block d-lg-block d-xl-block">
+                    <div class="sidebar-wrap">
+                        <div class="sidebar-wrap__inner">
+                            <div class="sidebar-header">
+                                <div class="sidebar-header__title">
+                                    <h4>Search Filter</h4>
+                                </div>
+                                <div class="sidebar-header__subtitle float-left">
+                                    578 of 987 flights
+                                </div>
+                                <div class="count-down float-right">
+                                    <p class="timer-holder"><span id="timer-countdown"></span></p>
+                                </div>
+                            </div>
+                            <div class="spacer"></div>
+                            <div class="alert-container">
+                                <div class="alert-container__wrap">
+                                    <div class="info-content">
+                                        <i class="fas fa-chart-line big-icon float-left"></i> Now's a great<br> time to
+                                        book <i class="fa fa-info-circle float-right icon-absolute"></i>
+                                    </div>
+                                    <div class="content-bottom">
+                                        <span>Price Alert</span>
+                                        <span class="float-right">
+                                          <label class="custom-toggle">
+                                            <input id="alert-tootle" type="checkbox">
+                                            <span class="custom-toggle-slider rounded-circle"></span>
+                                          </label>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="modal fade" id="modal-notification" tabindex="-1" role="dialog"
+                                     aria-labelledby="modal-notification" aria-hidden="true">
+                                    <div class="modal-dialog modal-danger modal-dialog-centered modal-" role="document">
+                                        <div class="modal-content bg-gradient-danger">
+                                            <div class="modal-header">
+                                                <h6 class="modal-title" id="modal-title-notification">Create a Price
+                                                    Alert, free</h6>
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                        aria-label="Close">
+                                                    <span aria-hidden="true">×</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="py-3 text-center">
+                                                    <i class="ni ni-bell-55 ni-3x"></i>
+                                                    <h4 class="heading mt-4"> DAC ▸ CXB | Sat 26/10 - Mon 4/11</h4>
+                                                    <br>
+                                                    <div class="form-group">
+                                                        <input type="text" placeholder="Input Your Email"
+                                                               class="form-control form-control-alternative"/>
+                                                    </div>
+
+                                                    <div class="custom-control custom-checkbox mb-3 float-left">
+                                                        <input class="custom-control-input" id="customCheck302"
+                                                               type="checkbox" checked>
+                                                        <label class="custom-control-label" for="customCheck302">
+                                                            <span>Checked</span>
+                                                        </label>
+                                                        <p class="d-inline">Email me Cheapflights's favourite deals</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-white">Save Price Alert</button>
+                                                <button type="button" class="btn btn-link text-white ml-auto"
+                                                        data-dismiss="modal">Close
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="spacer"></div>
+                            <div class="accordian-filter departure-airport">
+                                <div class="accordian-filter__wrapper">
+                                    <a class="btn btn-full accordion-btn text-left" data-toggle="collapse"
+                                       href="#DepartureAirports" role="button" aria-expanded="false"
+                                       aria-controls="DepartureAirports">
+                                        Departure Airports <i class="fa fa-angle-down text-right"></i>
+                                    </a>
+                                    <div class="collapse show" id="DepartureAirports">
+                                        <div class="card card-body">
+                                            <ul class="airport-list list-unstyled checkbox-list no-margin-bottom">
+                                                <li class="airport-name">
+                                                    <div class="custom-control custom-checkbox mb-1">
+                                                        <input class="custom-control-input" id="customCheck1"
+                                                               type="checkbox">
+                                                        <label class="custom-control-label" for="customCheck1">
+                                                            <span>ZAG: Franjo Tudman</span><span
+                                                                class="priceBox"> £175</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li class="airport-name">
+                                                    <div class="custom-control custom-checkbox mb-1">
+                                                        <input class="custom-control-input" id="customCheck2"
+                                                               type="checkbox">
+                                                        <label class="custom-control-label" for="customCheck2">
+                                                            <span>ZAG: Franjo Tudman</span><span
+                                                                class="priceBox"> £175</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li class="airport-name">
+                                                    <div class="custom-control custom-checkbox mb-1">
+                                                        <input class="custom-control-input" id="customCheck3"
+                                                               type="checkbox">
+                                                        <label class="custom-control-label" for="customCheck3">
+                                                            <span>ZAG: Franjo Tudman</span><span
+                                                                class="priceBox"> £175</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li class="airport-name">
+                                                    <div class="custom-control custom-checkbox">
+                                                        <input class="custom-control-input" id="customCheck4"
+                                                               type="checkbox">
+                                                        <label class="custom-control-label" for="customCheck4">
+                                                            <span>ZAG: Franjo Tudman</span><span
+                                                                class="priceBox"> £175</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="spacer"></div>
+                            <div class="accordian-filter date">
+                                <div class="accordian-filter__wrapper">
+                                    <a class="btn btn-full accordion-btn text-left" data-toggle="collapse" href="#Dates"
+                                       role="button" aria-expanded="false" aria-controls="Dates">
+                                        Dates <i class="fa fa-angle-down text-right"></i>
+                                    </a>
+                                    <div class="collapse show" id="Dates">
+                                        <div class="card card-body">
+                                            <div class="row">
+                                                <div class="form-group col-md-6 cs-padding">
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                        <span class="input-group-text"><i
+                                                                class="ni ni-calendar-grid-58"></i></span>
+                                                        </div>
+                                                        <input name="dates" class="form-control" placeholder="Start Date"
+                                                               type="text" value="06/18/2019">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group col-md-6 cs-padding">
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                        <span class="input-group-text"><i
+                                                                class="ni ni-calendar-grid-58"></i></span>
+                                                        </div>
+                                                        <input name="dates" class="form-control" placeholder="Return Date"
+                                                               type="text" value="06/18/2019">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="spacer"></div>
+                            <div class="accordian-filter cabin-class-filter">
+                                <div class="accordian-filter__wrapper">
+                                    <a class="btn btn-full accordion-btn text-left" data-toggle="collapse"
+                                       href="#CabinClassFilter" role="button" aria-expanded="false"
+                                       aria-controls="CabinClassFilter">
+                                        Cabin Class Filter <i class="fa fa-angle-down text-right"></i>
+                                    </a>
+                                    <div class="collapse show" id="CabinClassFilter">
+                                        <div class="card card-body">
+                                            <ul class="airport-list list-unstyled checkbox-list no-margin-bottom">
+                                                <li>
+                                                    <div class="custom-control custom-checkbox mb-1">
+                                                        <input class="custom-control-input" id="customCheck6"
+                                                               type="checkbox">
+                                                        <label class="custom-control-label" for="customCheck6">
+                                                            <span>Economy</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="custom-control custom-checkbox mb-1">
+                                                        <input class="custom-control-input" id="customCheck7"
+                                                               type="checkbox">
+                                                        <label class="custom-control-label" for="customCheck7">
+                                                            <span>Premium Economy</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="custom-control custom-checkbox">
+                                                        <input class="custom-control-input" id="customCheck8"
+                                                               type="checkbox">
+                                                        <label class="custom-control-label" for="customCheck8">
+                                                            <span>Business</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="spacer"></div>
+                            <div class="accordian-filter price-slider">
+                                <div class="accordian-filter__wrapper">
+                                    <a class="btn btn-full accordion-btn text-left" data-toggle="collapse"
+                                       href="#priceSlider" role="button" aria-expanded="false"
+                                       aria-controls="priceSlider">
+                                        Price Filter <i class="fa fa-angle-down text-right"></i>
+                                    </a>
+                                    <div class="collapse show" id="priceSlider">
+                                        <div class="card card-body">
+                                            <div class="mt-5">
+                                                <!-- Range slider container -->
+                                                <div id="input-slider-range" data-range-value-min="0"
+                                                     data-range-value-max="5000"></div>
+                                                <!-- Range slider values -->
+                                                <div class="row d-none">
+                                                    <div class="col-6">
+                                                        <span class="range-slider-value value-low"
+                                                              data-range-value-low="1500"
+                                                              id="input-slider-range-value-low"></span>
+                                                    </div>
+                                                    <div class="col-6 text-right">
+                                                        <span class="range-slider-value value-high"
+                                                              data-range-value-high="3000"
+                                                              id="input-slider-range-value-high"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="spacer"></div>
+                            <div class="accordian-filter od-stops">
+                                <div class="accordian-filter__wrapper">
+                                    <a class="btn btn-full accordion-btn text-left" data-toggle="collapse"
+                                       href="#NumberOdStops" role="button" aria-expanded="false"
+                                       aria-controls="NumberOdStops">
+                                        Number od Stops <i class="fa fa-angle-down text-right"></i>
+                                    </a>
+                                    <div class="collapse show" id="NumberOdStops">
+                                        <div class="card card-body">
+                                            <ul class="airport-list list-unstyled checkbox-list no-margin-bottom">
+                                                <li>
+                                                    <div class="custom-control custom-checkbox mb-1">
+                                                        <input class="custom-control-input" id="customCheck9"
+                                                               type="checkbox">
+                                                        <label class="custom-control-label" for="customCheck9">
+                                                            <span>Direct Flight</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="custom-control custom-checkbox mb-1">
+                                                        <input class="custom-control-input" id="customCheck10"
+                                                               type="checkbox">
+                                                        <label class="custom-control-label" for="customCheck10">
+                                                            <span>Max 1 Stop</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="custom-control custom-checkbox mb-1">
+                                                        <input class="custom-control-input" id="customCheck11"
+                                                               type="checkbox">
+                                                        <label class="custom-control-label" for="customCheck11">
+                                                            <span>Max 2 Stop</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="custom-control custom-checkbox">
+                                                        <input class="custom-control-input" id="customCheck12"
+                                                               type="checkbox">
+                                                        <label class="custom-control-label" for="customCheck12">
+                                                            <span>Multiple Stops</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="spacer"></div>
+                            <div class="accordian-filter baggage">
+                                <div class="accordian-filter__wrapper">
+                                    <a class="btn btn-full accordion-btn text-left" data-toggle="collapse"
+                                       href="#Baggage" role="button" aria-expanded="false" aria-controls="Baggage">
+                                        Baggage <i class="fa fa-angle-down text-right"></i>
+                                    </a>
+                                    <div class="collapse show" id="Baggage">
+                                        <div class="card card-body">
+                                            <ul class="airport-list list-unstyled checkbox-list no-margin-bottom">
+                                                <li>
+                                                    <div class="custom-control custom-checkbox mb-1">
+                                                        <input class="custom-control-input" id="customCheck13"
+                                                               type="checkbox">
+                                                        <label class="custom-control-label" for="customCheck13">
+                                                            <span>Included</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="custom-control custom-checkbox mb-1">
+                                                        <input class="custom-control-input" id="customCheck14"
+                                                               type="checkbox">
+                                                        <label class="custom-control-label" for="customCheck14">
+                                                            <span>Not Included</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="custom-control custom-checkbox">
+                                                        <input class="custom-control-input" id="customCheck15"
+                                                               type="checkbox">
+                                                        <label class="custom-control-label" for="customCheck15">
+                                                            <span>Partly Included</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="spacer"></div>
+                            <div class="accordian-filter timesfilter">
+                                <div class="accordian-filter__wrapper">
+                                    <a class="btn btn-full accordion-btn text-left" data-toggle="collapse"
+                                       href="#TimesFilter" role="button" aria-expanded="false"
+                                       aria-controls="TimesFilter">
+                                        Times Filter <i class="fa fa-angle-down text-right"></i>
+                                    </a>
+                                    <div class="collapse show" id="TimesFilter">
+                                        <div class="card card-body">
+                                            <div class="nav-wrapper">
+                                                <ul class="nav nav-pills nav-fill flex-column flex-md-row"
+                                                    id="tabs-icons-text" role="tablist">
+                                                    <li class="nav-item">
+                                                        <a class="nav-link mb-sm-3 mb-md-0 active"
+                                                           id="tabs-icons-text-1-tab" data-toggle="tab"
+                                                           href="#tabs-icons-text-1" role="tab"
+                                                           aria-controls="tabs-icons-text-1" aria-selected="true"><i
+                                                                class="fas fa-plane-departure"></i> Take off</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link mb-sm-3 mb-md-0" id="tabs-icons-text-2-tab"
+                                                           data-toggle="tab" href="#tabs-icons-text-2" role="tab"
+                                                           aria-controls="tabs-icons-text-2" aria-selected="false"><i
+                                                                class="fas fa-plane-arrival"></i> Landing</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="card shadow">
+                                                <div class="card-body">
+                                                    <div class="tab-content" id="myTabContent">
+                                                        <div class="tab-pane fade show active" id="tabs-icons-text-1"
+                                                             role="tabpanel" aria-labelledby="tabs-icons-text-1-tab">
+                                                            <h6>Take-off from ZAG</h6>
+                                                            <span class="starting-value-1 float-left">Thu 10:00</span>
+                                                            <span class="ending-value-1 float-right">22:00</span>
+                                                            <div class="clearfix"></div>
+                                                            <div class="wrap-slider">
+                                                                <!-- Range slider container -->
+                                                                <div id="input-slider-range-1" data-range-value-min="0"
+                                                                     data-range-value-max="24"></div>
+                                                                <!-- Range slider values -->
+                                                                <div class="row d-none">
+                                                                    <div class="col-6">
+                                                                        <span class="range-slider-value value-low"
+                                                                              data-range-value-low="5"
+                                                                              id="input-slider-range-value-low-1"></span>
+                                                                    </div>
+                                                                    <div class="col-6 text-right">
+                                                                        <span class="range-slider-value value-high"
+                                                                              data-range-value-high="15"
+                                                                              id="input-slider-range-value-high-1"></span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="tab-pane fade" id="tabs-icons-text-2"
+                                                             role="tabpanel" aria-labelledby="tabs-icons-text-2-tab">
+                                                            <h6>Landing to ZAG</h6>
+                                                            <span class="starting-value-1 float-left">Thu 10:00</span>
+                                                            <span class="ending-value-1 float-right">22:00</span>
+                                                            <div class="clearfix"></div>
+                                                            <div class="wrap-slider">
+                                                                <!-- Range slider container -->
+                                                                <div id="input-slider-range-2" data-range-value-min="0"
+                                                                     data-range-value-max="24"></div>
+                                                                <!-- Range slider values -->
+                                                                <div class="row d-none">
+                                                                    <div class="col-6">
+                                                                        <span class="range-slider-value value-low"
+                                                                              data-range-value-low="5"
+                                                                              id="input-slider-range-value-low-2"></span>
+                                                                    </div>
+                                                                    <div class="col-6 text-right">
+                                                                        <span class="range-slider-value value-high"
+                                                                              data-range-value-high="15"
+                                                                              id="input-slider-range-value-high-2"></span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="spacer"></div>
+                            <div class="accordian-filter journey-duration-filter">
+                                <div class="accordian-filter__wrapper">
+                                    <a class="btn btn-full accordion-btn text-left" data-toggle="collapse"
+                                       href="#JourneyDuration" role="button" aria-expanded="false"
+                                       aria-controls="JourneyDuration">
+                                        Journey duration <i class="fa fa-angle-down text-right"></i>
+                                    </a>
+                                    <div class="collapse show" id="JourneyDuration">
+                                        <div class="card card-body">
+                                            <h6>Flight leg</h6>
+                                            <div class="time-from-to">
+                                                <span class="starting-value-1 float-left">10:00</span>
+                                                <span class="ending-value-1 float-right">22:00</span>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                            <div class="wrap-slider">
+                                                <!-- Range slider container -->
+                                                <div id="input-slider-range-3" data-range-value-min="0"
+                                                     data-range-value-max="24"></div>
+                                                <!-- Range slider values -->
+                                                <div class="row d-none">
+                                                    <div class="col-6">
+                                                        <span class="range-slider-value value-low"
+                                                              data-range-value-low="5"
+                                                              id="input-slider-range-value-low-3"></span>
+                                                    </div>
+                                                    <div class="col-6 text-right">
+                                                        <span class="range-slider-value value-high"
+                                                              data-range-value-high="15"
+                                                              id="input-slider-range-value-high-3"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h6>Stopover</h6>
+                                            <div class="time-from-to">
+                                                <span class="starting-value-1 float-left">10:00</span>
+                                                <span class="ending-value-1 float-right">22:00</span>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                            <div class="wrap-slider">
+                                                <!-- Range slider container -->
+                                                <div id="input-slider-range-4" data-range-value-min="0"
+                                                     data-range-value-max="24"></div>
+                                                <!-- Range slider values -->
+                                                <div class="row d-none">
+                                                    <div class="col-6">
+                                                        <span class="range-slider-value value-low"
+                                                              data-range-value-low="5"
+                                                              id="input-slider-range-value-low-4"></span>
+                                                    </div>
+                                                    <div class="col-6 text-right">
+                                                        <span class="range-slider-value value-high"
+                                                              data-range-value-high="15"
+                                                              id="input-slider-range-value-high-4"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="spacer"></div>
+                            <div class="accordian-filter airports">
+                                <div class="accordian-filter__wrapper">
+                                    <a class="btn btn-full accordion-btn text-left" data-toggle="collapse"
+                                       href="#Airports" role="button" aria-expanded="false" aria-controls="Airports">
+                                        Airports <i class="fa fa-angle-down text-right"></i>
+                                    </a>
+                                    <div class="collapse show" id="Airports">
+                                        <div class="card card-body">
+                                            <ul class="airport-list list-unstyled checkbox-list no-margin-bottom">
+                                                <li class="airport-name">
+                                                    <div class="custom-control custom-checkbox mb-1">
+                                                        <input class="custom-control-input" id="customCheck16"
+                                                               type="checkbox">
+                                                        <label class="custom-control-label" for="customCheck16">
+                                                            <span>Depart/return same</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li class="airport-name">
+                                                    <div class="custom-control custom-checkbox mb-1">
+                                                        <input class="custom-control-input" id="customCheck17"
+                                                               type="checkbox">
+                                                        <label class="custom-control-label" for="customCheck17">
+                                                            <span>CDG: Charles de Gau</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li class="airport-name">
+                                                    <div class="custom-control custom-checkbox mb-1">
+                                                        <input class="custom-control-input" id="customCheck18"
+                                                               type="checkbox">
+                                                        <label class="custom-control-label" for="customCheck18">
+                                                            <span>BVA: Beauvais-Tille</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li class="airport-name">
+                                                    <div class="custom-control custom-checkbox">
+                                                        <input class="custom-control-input" id="customCheck19"
+                                                               type="checkbox">
+                                                        <label class="custom-control-label" for="customCheck19">
+                                                            <span>ORY: Orly</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="spacer"></div>
+                            <div class="accordian-filter arilines">
+                                <div class="accordian-filter__wrapper">
+                                    <a class="btn btn-full accordion-btn text-left" data-toggle="collapse"
+                                       href="#Arilines" role="button" aria-expanded="false" aria-controls="Arilines">
+                                        Arilines Filter <i class="fa fa-angle-down text-right"></i>
+                                    </a>
+                                    <div class="collapse show" id="Arilines">
+                                        <div class="card card-body">
+                                            <ul class="airport-list list-unstyled checkbox-list no-margin-bottom">
+                                                <li class="arilines">
+                                                    <div class="custom-control custom-checkbox mb-1">
+                                                        <input class="custom-control-input" id="customCheck20"
+                                                               type="checkbox">
+                                                        <label class="custom-control-label" for="customCheck20">
+                                                            <span>Oneworld</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li class="arilines">
+                                                    <div class="custom-control custom-checkbox mb-1">
+                                                        <input class="custom-control-input" id="customCheck21"
+                                                               type="checkbox">
+                                                        <label class="custom-control-label" for="customCheck21">
+                                                            <span>SkyTeam</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li class="arilines">
+                                                    <div class="custom-control custom-checkbox">
+                                                        <input class="custom-control-input" id="customCheck22"
+                                                               type="checkbox">
+                                                        <label class="custom-control-label" for="customCheck22">
+                                                            <span>Star Alliance</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="spacer"></div>
+                            <div class="accordian-filter faq">
+                                <div class="accordian-filter__wrapper">
+                                    <a class="btn btn-full accordion-btn text-left" data-toggle="collapse" href="#Faq"
+                                       role="button" aria-expanded="false" aria-controls="Faq">
+                                        Common FAQ<i class="fa fa-angle-down text-right"></i>
+                                    </a>
+                                    <div class="collapse show" id="Faq">
+                                        <div class="card card-body">
+                                            <ul class="airport-list list-unstyled checkbox-list no-margin-bottom">
+                                                <li>
+                                                    <i class="fa fa-book"></i> <a href="#" class="">General knowledge on
+                                                    payment</a>
+                                                </li>
+                                                <li>
+                                                    <i class="fa fa-book"></i> <a href="#" class="">Refund Policy</a>
+                                                </li>
+                                                <li>
+                                                    <i class="fa fa-book"></i> <a href="#" class="">Service rules and
+                                                    regulation</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="spacer"></div>
+                            <div class="accordian-filter lastsearch">
+                                <div class="accordian-filter__wrapper">
+                                    <a class="btn btn-full accordion-btn text-left" data-toggle="collapse"
+                                       href="#LastSearch" role="button" aria-expanded="false"
+                                       aria-controls="LastSearch">
+                                        My Searches <i class="fa fa-angle-down text-right"></i>
+                                    </a>
+                                    <div class="collapse show" id="LastSearch">
+                                        <div class="card card-body">
+                                            <ul class="airport-list list-unstyled checkbox-list no-margin-bottom">
+                                                <li class="arilines">
+                                                    <div class="custom-control custom-checkbox mb-1">
+                                                        <input class="custom-control-input" id="customCheck30"
+                                                               type="checkbox">
+                                                        <label class="custom-control-label" for="customCheck30">
+                                                            <span>Dhk > Cox</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li class="arilines">
+                                                    <div class="custom-control custom-checkbox mb-1">
+                                                        <input class="custom-control-input" id="customCheck31"
+                                                               type="checkbox">
+                                                        <label class="custom-control-label" for="customCheck31">
+                                                            <span>Cox > Syl</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li class="arilines">
+                                                    <div class="custom-control custom-checkbox">
+                                                        <input class="custom-control-input" id="customCheck32"
+                                                               type="checkbox">
+                                                        <label class="custom-control-label" for="customCheck32">
+                                                            <span>Ctg > Dhk</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="spacer"></div>
+                        </div>
+                        <!--End of sidebar-wrap__inner-->
+                    </div>
+                    <!--End of sidebar-wrap-->
+                </div>
+                <!--End of Sidebar-->
+                <div class="col-md-9 bg-flight-list-view">
+                    <div class="list-content">
+                        <div class="list-content__wrap">
+                            <div class="flight-list-item">
+                                <div class="row flight-content">
+                                    <div class="col-md-9">
+                                        <div class="flight-result pt-20">
+                                            <div class="flight-result__wrap">
+                                                <div class="flight-result__wrap__inner">
+                                                    <ul class="flights-view list-unstyled">
+                                                        <li class="fl-result-list clearfix">
+                                                            <div data-target="#collapseExample" type="button"
+                                                                 class="float-left flight-details-view-btn"
+                                                                 data-toggle="collapse"
+                                                                 href="" role="button"
+                                                                 aria-expanded="false"
+                                                                 aria-controls="collapseExample">
+
+                                                                <div class="row">
+                                                                    <div class="col-md-6 col-sm-5 col-5">
+                                                                        <div class="carrier float-left">
+                                                                            <img src="images/lh.png"
+                                                                                 alt="Lufthansa Airlines logo">
+                                                                        </div>
+                                                                        <div class="times float-left">
+                                                                            <div class="top">
+                                                                                <span class="time-pair">
+                                                                                    <span class="depart-time base-time">08:10</span>
+                                                                                </span>
+                                                                                <span class="sep">—</span>
+                                                                                <span class="time-pair">
+                                                                                    <span class="arrival-time base-time">17:10</span>
+                                                                                </span>
+                                                                            </div>
+                                                                            <div class="bottom ">
+                                                                                Lufthansa
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-3 col-sm-4 col-4">
+                                                                        <div class="flightD--direction">
+                                                                            <div class="flightD--direction-duration">23h
+                                                                                10m
+                                                                            </div>
+                                                                            <div class="flightD--direction-arrow">
+                                                                                <div class="flightD--direction-arrow-dots">
+                                                                                    <div></div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="flightD--direction-type">1
+                                                                                Stop
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-3 col-sm-3 col-3">
+                                                                        <div class="duration">
+                                                                            <div class="info float-right text-right">
+                                                                                <button class="btn btn-tooltip"
+                                                                                        data-toggle="tooltip"
+                                                                                        data-placement="top"
+                                                                                        title="Click To Expand">
+                                                                                    <i class="fa fa-question-circle"></i>
+                                                                                </button>
+                                                                            </div>
+                                                                            <div class="top">
+                                                                                9h 00m
+                                                                            </div>
+                                                                            <div class="bottom">
+                                                                                <span class="js-airport"
+                                                                                      title="Zagreb Franjo Tuđman">ZAG</span>
+                                                                                <span class="sep">‐</span>
+                                                                                <span class="js-airport"
+                                                                                      title="Paris Charles de Gaulle">CDG</span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="fl-result-list clearfix">
+                                                            <div data-target="#collapseExample" type="button"
+                                                                 class="float-left flight-details-view-btn"
+                                                                 data-toggle="collapse"
+                                                                 href="" role="button"
+                                                                 aria-expanded="false"
+                                                                 aria-controls="collapseExample">
+
+                                                                <div class="row">
+                                                                    <div class="col-md-6 col-sm-5 col-5">
+                                                                        <div class="carrier float-left">
+                                                                            <img src="images/os.png"
+                                                                                 alt="Austrian Airlines logo">
+                                                                        </div>
+                                                                        <div class="times float-left">
+                                                                            <div class="top">
+                                                                                <span class="time-pair">
+                                                                                    <span class="depart-time base-time">08:10</span>
+                                                                                </span>
+                                                                                <span class="sep">—</span>
+                                                                                <span class="time-pair">
+                                                                                    <span class="arrival-time base-time">17:10</span>
+                                                                                </span>
+                                                                            </div>
+                                                                            <div class="bottom ">
+                                                                                Austrian Airlines
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-3 col-sm-4 col-4">
+                                                                        <div class="flightD--direction">
+
+                                                                            <div class="flightD--direction-duration">1h
+                                                                                55m
+                                                                            </div>
+                                                                            <div class="flightD--direction-arrow">
+                                                                                <div class="flightD--direction-arrow-dots"></div>
+                                                                            </div>
+                                                                            <div class="flightD--direction-type">
+                                                                                Direktni let
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-3 col-sm-3 col-3">
+                                                                        <div class="duration">
+                                                                            <div class="info float-right text-right">
+                                                                                <button class="btn btn-tooltip"
+                                                                                        data-toggle="tooltip"
+                                                                                        data-placement="top"
+                                                                                        title="Click To Expand">
+                                                                                    <i class="fa fa-question-circle"></i>
+                                                                                </button>
+                                                                            </div>
+                                                                            <div class="top">
+                                                                                9h 00m
+                                                                            </div>
+                                                                            <div class="bottom">
+                                                                                <span class="js-airport"
+                                                                                      title="Zagreb Franjo Tuđman">ZAG</span>
+                                                                                <span class="sep">‐</span>
+                                                                                <span class="js-airport"
+                                                                                      title="Paris Charles de Gaulle">CDG</span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 bg-list-action">
+                                        <div class="list-action text-right pt-20">
+                                            <ul class="list-unstyled list-inline fl-action-ico-list">
+                                                <li class="list-inline-item btn-tooltip" data-toggle="tooltip"
+                                                    data-placement="top" title="Cabin bag Included"
+                                                    data-container="body" data-animation="true"><i
+                                                        class="fa fa-briefcase"></i> <span
+                                                        class="number">1</span></li>
+                                                <li class="list-inline-item btn-tooltip" data-toggle="tooltip"
+                                                    data-placement="top" title="Checked bag Included"
+                                                    data-container="body" data-animation="true"><i
+                                                        class="fa fa-briefcase"></i> <span
+                                                        class="number">1</span></li>
+                                                <li class="list-inline-item btn-tooltip" data-toggle="tooltip"
+                                                    data-placement="top" title="With Visa Debit" data-container="body"
+                                                    data-animation="true"><i class="fa fa-credit-card"></i></li>
+                                            </ul>
+                                            <span class="price bold"> £174 </span>
+                                            <span class="trip-provider d-none d-md-block d-lg-block"> Trip Monoster</span>
+                                            <a class="btn btn-primary d-none d-md-block d-lg-block" href="#">View Details</a>
+                                            <a class="btn btn-primary d-block d-md-none d-lg-none" href="#">View</a>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row flight-details-content">
+                                    <div class="col-md-12">
+                                        <div class="flight-result__wrap__outer">
+                                            <div class="collapse" id="collapseExample">
+                                                <div class="card card-body">
+                                                    <div class="nav-wrapper">
+                                                        <ul class="nav" id="tabs-text" role="tablist">
+                                                            <li class="nav-item">
+                                                                <a class="nav-link mb-sm-3 mb-md-0 active"
+                                                                   id="tabs-text-1-tab" data-toggle="tab"
+                                                                   href="#tabs-text-1" role="tab"
+                                                                   aria-controls="tabs-text-1" aria-selected="true">Details</a>
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a class="nav-link mb-sm-3 mb-md-0" id="tabs-text-2-tab"
+                                                                   data-toggle="tab" href="#tabs-text-2" role="tab"
+                                                                   aria-controls="tabs-text-2" aria-selected="false">Fares</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="content-tab-body">
+                                                        <div class="content-tab-body__wrap">
+                                                            <div class="tab-content" id="myTabContent1">
+                                                                <div class="tab-pane fade show active" id="tabs-text-1"
+                                                                     role="tabpanel" aria-labelledby="tabs-text-1-tab">
+                                                                    <div class="segment-item">
+                                                                        <div class="checkbox-wrap">
+                                                                            <div class="custom-control custom-checkbox mb-3 flight-select-box">
+                                                                                <input class="custom-control-input"
+                                                                                       id="customCheck23"
+                                                                                       type="checkbox">
+                                                                                <label class="custom-control-label"
+                                                                                       for="customCheck23">
+                                                                                </label>
+                                                                                Depart
+                                                                            </div>
+                                                                            <span class="sub-text">ZAG - CDG</span>
+                                                                            <div class="float-right">
+                                                                            <span class="timeing">
+                                                                                 2h 05m
+                                                                            </span>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="segment-row segment-item-view">
+                                                                            <div class="row">
+                                                                                <div class="col-md-2">
+                                                                                    <div class="leg-dates-set">
+                                                                                        <div class="date">
+                                                                                            Thu, 24 Oct
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-md-6">
+                                                                                    <div class="float-left flight-icon">
+                                                                                        <img src="images/AF.png"/>
+                                                                                    </div>
+                                                                                    <div class="flight-segment-details">
+                                                                                        <div class="col-segment-heading">
+                                                                                            <div class="segmentTimes details-heading text-row">
+                                                                                                <span class="time">17:55</span>
+                                                                                                — <span class="time">20:00</span>
+                                                                                            </div>
+                                                                                            <div class="airport-codes details-heading text-row">
+                                                                                        <span class="origin">
+                                                                                          <span class="city">Zagreb (ZAG)</span>
+                                                                                        </span>
+                                                                                                -
+                                                                                                <span class="destination">
+                                                                                            <span class="city">Paris (CDG)</span>
+                                                                                        </span>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="bottom-text-view">
+                                                                                        <div class="planeDetails details-subheading">
+                                                                                            Air France 1560 ·
+                                                                                            Narrow-body jet · Airbus
+                                                                                            A318
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-md-4">
+                                                                                    <div class="segcab-details text-row text-right">
+                                                                                    <span class="segmentCabinClass">
+                                                                                        Economy
+                                                                                    </span>
+                                                                                        <span class="segmentDuration text-row">
+                                                                                        2h 05m
+                                                                                    </span>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="segment-item">
+                                                                        <div class="checkbox-wrap">
+                                                                            <div class="custom-control custom-checkbox mb-3 flight-select-box">
+                                                                                <input class="custom-control-input"
+                                                                                       id="customCheck24"
+                                                                                       type="checkbox">
+                                                                                <label class="custom-control-label"
+                                                                                       for="customCheck24">
+                                                                                </label>
+                                                                                Depart
+                                                                            </div>
+                                                                            <span class="sub-text">ZAG - CDG</span>
+                                                                            <div class="float-right">
+                                                                            <span class="timeing">
+                                                                                 2h 05m
+                                                                            </span>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="segment-row segment-item-view">
+                                                                            <div class="row">
+                                                                                <div class="col-md-2">
+                                                                                    <div class="leg-dates-set">
+                                                                                        <div class="date">
+                                                                                            Thu, 24 Oct
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-md-6">
+                                                                                    <div class="float-left flight-icon">
+                                                                                        <img src="images/AF.png"/>
+                                                                                    </div>
+                                                                                    <div class="flight-segment-details">
+                                                                                        <div class="col-segment-heading">
+                                                                                            <div class="segmentTimes details-heading text-row">
+                                                                                                <span class="time">17:55</span>
+                                                                                                — <span class="time">20:00</span>
+                                                                                            </div>
+                                                                                            <div class="airport-codes details-heading text-row">
+                                                                                        <span class="origin">
+                                                                                          <span class="city">Zagreb (ZAG)</span>
+                                                                                        </span>
+                                                                                                -
+                                                                                                <span class="destination">
+                                                                                            <span class="city">Paris (CDG)</span>
+                                                                                        </span>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="bottom-text-view">
+                                                                                        <div class="planeDetails details-subheading">
+                                                                                            Air France 1560 ·
+                                                                                            Narrow-body jet · Airbus
+                                                                                            A318
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-md-4">
+                                                                                    <div class="segcab-details text-row text-right">
+                                                                                    <span class="segmentCabinClass">
+                                                                                        Economy
+                                                                                    </span>
+                                                                                        <span class="segmentDuration text-row">
+                                                                                        2h 05m
+                                                                                    </span>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="segment-item">
+                                                                        <div class="checkbox-wrap">
+                                                                            <div class="custom-control custom-checkbox mb-3 flight-select-box">
+                                                                                <input class="custom-control-input"
+                                                                                       id="customCheck25"
+                                                                                       type="checkbox">
+                                                                                <label class="custom-control-label"
+                                                                                       for="customCheck25">
+                                                                                </label>
+                                                                                Depart
+                                                                            </div>
+                                                                            <span class="sub-text">ZAG - CDG</span>
+                                                                            <div class="float-right">
+                                                                            <span class="timeing">
+                                                                                 2h 05m
+                                                                            </span>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="segment-row segment-item-view">
+                                                                            <div class="row">
+                                                                                <div class="col-md-2">
+                                                                                    <div class="leg-dates-set">
+                                                                                        <div class="date">
+                                                                                            Thu, 24 Oct
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-md-6">
+                                                                                    <div class="float-left flight-icon">
+                                                                                        <img src="images/AF.png"/>
+                                                                                    </div>
+                                                                                    <div class="flight-segment-details">
+                                                                                        <div class="col-segment-heading">
+                                                                                            <div class="segmentTimes details-heading text-row">
+                                                                                                <span class="time">17:55</span>
+                                                                                                — <span class="time">20:00</span>
+                                                                                            </div>
+                                                                                            <div class="airport-codes details-heading text-row">
+                                                                                        <span class="origin">
+                                                                                          <span class="city">Zagreb (ZAG)</span>
+                                                                                        </span>
+                                                                                                -
+                                                                                                <span class="destination">
+                                                                                            <span class="city">Paris (CDG)</span>
+                                                                                        </span>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="bottom-text-view">
+                                                                                        <div class="planeDetails details-subheading">
+                                                                                            Air France 1560 ·
+                                                                                            Narrow-body jet · Airbus
+                                                                                            A318
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-md-4">
+                                                                                    <div class="segcab-details text-row text-right">
+                                                                                    <span class="segmentCabinClass">
+                                                                                        Economy
+                                                                                    </span>
+                                                                                        <span class="segmentDuration text-row">
+                                                                                        2h 05m
+                                                                                    </span>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="tab-pane fade" id="tabs-text-2"
+                                                                     role="tabpanel" aria-labelledby="tabs-text-2-tab">
+                                                                    <p class="description">
+                                                                        Good provider : We award high marks for customer
+                                                                        satisfaction, price accuracy, and transparency.
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+<footer class="footer has-cards">
+    <div class="container">
+        <div class="row row-grid align-items-center my-md">
+            <div class="col-lg-6">
+                <h3 class="text-primary font-weight-light mb-2">Thank you for taking my service !</h3>
+                <h4 class="mb-0 font-weight-light">I will be your next tech expert to help you on all IT projects</h4>
+            </div>
+            <div class="col-lg-6 text-lg-center btn-wrapper">
+                <a target="_blank" href="#" class="btn btn-neutral btn-icon-only btn-twitter btn-round btn-lg"
+                   data-toggle="tooltip" data-original-title="Follow us">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a target="_blank" href="#" class="btn btn-neutral btn-icon-only btn-facebook btn-round btn-lg"
+                   data-toggle="tooltip" data-original-title="Like us">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a target="_blank" href="#" class="btn btn-neutral btn-icon-only btn-dribbble btn-lg btn-round"
+                   data-toggle="tooltip" data-original-title="Follow us">
+                    <i class="fab fa-dribbble"></i>
+                </a>
+                <a target="_blank" href="#" class="btn btn-neutral btn-icon-only btn-github btn-round btn-lg"
+                   data-toggle="tooltip" data-original-title="Star on Github">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+        </div>
+        <hr>
+        <div class="row align-items-center justify-content-md-between">
+            <div class="col-md-6 col-sm-6 col-6">
+                <div class="copyright">
+                    &copy; 2019 <a href="https://www.freelancer.com/u/ThemeRox" target="_blank">NiamRox</a>.
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6 col-6">
+                <ul class="nav nav-footer justify-content-end">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" target="_blank">NiamRox</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" target="_blank">About Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Core -->
+<script src="./assets/vendor/jquery/jquery.min.js"></script>
+<script src="./assets/vendor/popper/popper.min.js"></script>
+<script src="./assets/vendor/bootstrap/bootstrap.min.js"></script>
+<script src="./assets/vendor/headroom/headroom.min.js"></script>
+<!-- Optional JS -->
+<script src="./assets/vendor/onscreen/onscreen.min.js"></script>
+<script src="./assets/vendor/nouislider/js/nouislider.min.js"></script>
+<script src="./assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+
+<script type="text/javascript" src="./assets/vendor/moment/moment.min.js"></script>
+<script type="text/javascript" src="./assets/vendor/daterangepicker/daterangepicker.min.js"></script>
+<script type="text/javascript" src="./assets/vendor/missofis-countdown/missofis-countdown.js"></script>
+
+<script src="./assets/js/scripts.js"></script>
+<script>
+    var dateToday = new Date();
+    $('input[name="dates"]').daterangepicker({
+        singleDatePicker: true,
+        showDropdowns: true,
+        minDate: dateToday,
+    });
+
+    $(document).ready(function () {
+        var tootleStatus = document.getElementById("alert-tootle");
+        $(".custom-toggle-slider").on('click', function () {
+            if (tootleStatus.checked) {
+
+            } else {
+                $('#modal-notification').modal('show');
+                $('#modal-notification').on('hidden.bs.modal', function (e) {
+                    $("#alert-tootle").prop("checked", false);
+                })
+
+            }
+        });
+    });
+
+
+    $('.btn-number').click(function (e) {
+        e.stopPropagation();
+        e.stopImmediatePropagation();
+        e.preventDefault();
+
+        fieldName = $(this).attr('data-field');
+        type = $(this).attr('data-type');
+        var input = $("input[name='" + fieldName + "']");
+        var currentVal = parseInt(input.val());
+
+        if (!isNaN(currentVal)) {
+            if (type == 'minus') {
+
+                if (currentVal > input.attr('min')) {
+                    input.val(currentVal - 1).change();
+                }
+                if (parseInt(input.val()) == input.attr('min')) {
+                    $(this).attr('disabled', true);
+                }
+
+            } else if (type == 'plus') {
+
+                if (currentVal < input.attr('max')) {
+                    input.val(currentVal + 1).change();
+                }
+                if (parseInt(input.val()) == input.attr('max')) {
+                    $(this).attr('disabled', true);
+                }
+
+            }
+        } else {
+            input.val(0);
+        }
+    });
+    $('.input-number').focusin(function () {
+        $(this).data('oldValue', $(this).val());
+    });
+    $('.input-number').change(function () {
+
+        minValue = parseInt($(this).attr('min'));
+        maxValue = parseInt($(this).attr('max'));
+        valueCurrent = parseInt($(this).val());
+
+        var name;
+        name = $(this).attr('name');
+        if (valueCurrent >= minValue) {
+            $(".btn-number[data-type='minus'][data-field='" + name + "']").removeAttr('disabled')
+        } else {
+            alert('Sorry, the minimum value was reached');
+            $(this).val($(this).data('oldValue'));
+        }
+        if (valueCurrent <= maxValue) {
+            $(".btn-number[data-type='plus'][data-field='" + name + "']").removeAttr('disabled')
+        } else {
+            alert('Sorry, the maximum value was reached');
+            $(this).val($(this).data('oldValue'));
+        }
+
+
+    });
+
+    $(".input-number").keydown(function (e) {
+        // Allow: backspace, delete, tab, escape, enter and .
+        if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 190]) !== -1 ||
+            // Allow: Ctrl+A
+            (e.keyCode == 65 && e.ctrlKey === true) ||
+            // Allow: home, end, left, right
+            (e.keyCode >= 35 && e.keyCode <= 39)) {
+            // let it happen, don't do anything
+            return;
+        }
+        // Ensure that it is a number and stop the keypress
+        if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+            e.preventDefault();
+        }
+    });
+
+    //Stop Default Button Close For Toggle
+
+    jQuery('.dropdown-toggle').on('click', function (e) {
+        $(this).next().toggle();
+    });
+    jQuery('.dropdown-menu.keep-open').on('click', function (e) {
+        e.stopPropagation();
+    });
+
+
+    // default setup
+    $( '#timer-countdown' ).countdown( {
+        from: 360 * 3, // 3 minutes (3*60)
+        to: 0, // stop at zero
+        movingUnit: 1000, // 1000 for 1 second increment/decrements
+        timerEnd: undefined,
+        outputPattern: '$minute : $second',
+        autostart: true
+    } );
+
+
+</script>
+</body>
+
+</html>
